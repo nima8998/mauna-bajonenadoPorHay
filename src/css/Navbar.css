@@ -1,0 +1,15 @@
+.navbar{
+    color: #fff;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    height: fit-content;
+}
+
+.navbar__links{
+    margin: 0 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: fit-content;
+}
