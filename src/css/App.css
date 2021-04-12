@@ -1,6 +1,4 @@
 .App {
-        background-color: #35428C;
         height: 950px;
-        transform: matrix(1, -0.2, 0, 1, 0, 0);
         margin-top: 80px;
 }

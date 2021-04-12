@@ -1,8 +1,8 @@
 import React from 'react'
-import "../css/bg.css"
+import '../css/Background.css'
 
-export default function Bg() {
-    return (
-        <div className="bg"></div>
+export default function Background() {
+    return(
+        <div className="background"></div>
     )
 }

@@ -1,4 +1,12 @@
 .Feed {
-    width: 75%;
+    padding: 0 100px;
+    transform: matrix(1, -0.2, 0, 1, 0, 0);
+    background-color: #35428C;
     margin: auto;
+}
+
+.Feed_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

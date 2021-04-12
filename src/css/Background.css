@@ -1,0 +1,11 @@
+.background{
+       background-image: url(../img/BajoneandoPorHay.png);
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       background-attachment: fixed;
+       height: 100%;
+       position: relative;
+       bottom: 250px;
+       z-index: -1;
+}
