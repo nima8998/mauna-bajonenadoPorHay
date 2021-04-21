@@ -5,11 +5,11 @@
     align-items: center;
     padding: 10px 0;
     height: fit-content;
+    margin-bottom: 100px;
 }
 
 .navbar__links{
     margin: 0 30px;
     cursor: pointer;
     text-transform: uppercase;
-    height: fit-content;
 }

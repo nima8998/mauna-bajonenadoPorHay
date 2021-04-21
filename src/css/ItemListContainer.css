@@ -1,5 +1,11 @@
-.Greeting{
-    transform: rotate(10deg);
+.ItemListContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    row-gap: 1rem;
     color: #fff;
-    
+    margin-top: 15px;
+    width: 100%;
 }
