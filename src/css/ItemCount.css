@@ -1,0 +1,17 @@
+.ItemCount{
+    text-align: center;
+    font-size: 14px;
+}
+
+.dispo{
+    margin: 1rem 0;
+}
+
+.dispoCliente {
+    margin: 0 1rem;
+    font-weight: 600;
+}
+
+.dispoLocal{
+    font-weight: 600;
+}

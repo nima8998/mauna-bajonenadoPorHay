@@ -16,7 +16,8 @@ const ItemList = () => {
                     direccion: 'Honduras 4733',
                     tipo: 'Hamburguesas',
                     exp: '"Cuando te pones una campera que no usas hace un monton, metes la mano en el bolsillo y encontras plata, que igualmente es tuya"',
-                    logo: '../img/lugares/burgerCompany.png'
+                    logo: '../img/lugares/burgerCompany.png',
+                    dispo: 7
                 },
                 {
                     id: 1,
@@ -24,7 +25,8 @@ const ItemList = () => {
                     direccion: 'Honduras 5600',
                     tipo: 'Comida celíaca',
                     exp: 'No lo sabemos',
-                    logo: '../img/lugares/burgerCompany.png'
+                    logo: '../img/lugares/burgerCompany.png',
+                    dispo: 4
                 },
                 {
                     id: 2,
@@ -32,7 +34,8 @@ const ItemList = () => {
                     direccion: 'Av. Cordoba 5267',
                     tipo: 'Restobar',
                     exp: '"Como el fideo Di Maria cuando metió ese gol que se lo terminó dedicando a la abuela"',
-                    logo: '../img/lugares/burgerCompany.png'
+                    logo: '../img/lugares/burgerCompany.png',
+                    dispo: 8
                 },
                 {
                     id: 3,
@@ -40,7 +43,8 @@ const ItemList = () => {
                     direccion: 'Tucuman 422',
                     tipo: 'Smart restaurant',
                     exp: '"Como Marty McFly cuando la madre le empieza a tirar onda"',
-                    logo: '../img/lugares/burgerCompany.png'
+                    logo: '../img/lugares/burgerCompany.png',
+                    dispo: 10
                 }
                 ];
                 setTimeout(()=>{
@@ -70,6 +74,7 @@ const ItemList = () => {
                     tipo={lugar.tipo} 
                     exp={lugar.exp} 
                     logo={lugar.logo}
+                    dispo={lugar.dispo}
                 />)
             }
         </div>

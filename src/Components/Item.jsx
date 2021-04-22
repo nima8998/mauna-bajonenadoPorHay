@@ -6,16 +6,19 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions'
 import Button from '@material-ui/core/Button'
-
+import ItemCount from './ItemCount'
 import '../css/Item.css'
+import logo from '../img/lugares/logo.png'
 
 const Item = (props, tipo, direccion, exp) => {
-
+    console.log(props)
     return (
         <Card>
             <CardActionArea>
                 <CardHeader title={props.title}/>
-                <CardMedia image={props.logo} />
+                <CardMedia>
+                    <img src={logo} alt='logo'/>
+                </CardMedia>
                 <CardContent component='b'>
                     {tipo=props.tipo}
                 </CardContent>
@@ -28,6 +31,7 @@ const Item = (props, tipo, direccion, exp) => {
                     {direccion=props.direccion}
                 </Button>
             </CardActions>
+                <ItemCount dispo={props.dispo} />
         </Card>
     )
 }
