@@ -1,7 +1,8 @@
 import React from 'react';
-import '../css/Feed.css'
 import NavBar from './NavBar'
 import { ItemListContainer }  from '../container/ItemListContainer.jsx'
+
+import '../css/Feed.css'
 
 export default function Feed() {
     return (

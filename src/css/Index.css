@@ -1,0 +1,36 @@
+html{
+    background-color: #F2F2F2;
+}
+
+.Index{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5rem;
+    height: 100vh;
+}
+
+.Index__greetings{
+    text-align: center;
+    max-width: 450px;
+}
+
+h1{
+    font-size: 52px;
+}
+
+p{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+img{
+    max-width: 650px;
+}
+
+.inner{
+    transition: transform 0.5s;
+    -webkit-transition: transform 0.5s;
+    -moz-transition: transform 0.5s;
+    -o-transition: transform 0.5s;
+}
