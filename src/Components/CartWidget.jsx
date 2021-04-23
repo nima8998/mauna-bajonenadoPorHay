@@ -1,14 +1,14 @@
 import React from 'react'
-import Logo from '../img/logo.jpg'
-
-let styleLogo = {
-    width: '4rem',
-    borderRadius: '50%',
-    marginRight: '5rem',
-}
+import Cart from '@material-ui/icons/ShoppingCartOutlined'
 
 export default function CartWidget() {
+    let style={
+        marginLeft: '5rem'
+    }
+
     return (
-        <img src={Logo} alt="logo" style={styleLogo} />
+        <div>
+            <Cart color="primary" style={style}/>
+        </div>
     )
 }

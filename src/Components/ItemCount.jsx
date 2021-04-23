@@ -1,41 +1,42 @@
 import React, { useState } from 'react'
 import Button from '@material-ui/core/Button'
+import AddCart from '@material-ui/icons/AddShoppingCartOutlined'
 
 import '../css/ItemCount.css'
 
-export default function ItemCount({dispo}) {
+export default function ItemCount({stock}) {
     let disabled = false
 
-    let [dispoLocal, setDispoLocal] = useState(dispo)
-    let [dispoCliente, setDispoCliente] = useState (0)
+    let [stockLocal, setStockLocal] = useState(stock)
+    let [stockCliente, setStockCliente] = useState (0)
     
     let sumar = () =>{
-        if (dispoLocal === 0) {
+        if (stockLocal === 0) {
             disabled = true
         }else{
-            setDispoLocal(dispoLocal -1)
-            setDispoCliente(dispoCliente +1)
+            setStockLocal(stockLocal -1)
+            setStockCliente(stockCliente +1)
         }
     }
 
     let restar = () =>{
-        if (dispoCliente === 0) {
+        if (stockCliente === 0) {
             disabled = true
         }else{
-            setDispoLocal(dispoLocal +1)
-            setDispoCliente(dispoCliente -1)
+            setStockLocal(stockLocal +1)
+            setStockCliente(stockCliente -1)
         }
     }
     
     return (
         <div className='ItemCount'>
-            <p>Disponibilidad para reserva: <span className='dispoLocal'>{dispoLocal}</span></p>
+            <p>Stock stocknible: <span className='dispoLocal'>{stockLocal}</span></p>
             <div className='dispo'>
                 <Button variant='outlined' color='secondary' size='small' onClick={restar} disabled={disabled}>-</Button>
-                <span className='dispoCliente'>{dispoCliente}</span>
+                <span className='dispoCliente'>{stockCliente}</span>
                 <Button variant='outlined' color='primary' size='small' onClick={sumar} disabled={disabled}>+</Button>
             </div>
-            <Button variant='contained' color='primary' size='small'>Reservar</Button>
+            <Button variant='outlined' color='primary' size='small'>Agregar al carrito <AddCart color='primary' fontSize='small'/></Button>
         </div>
     )
 }

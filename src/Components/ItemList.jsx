@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Item from '../Components/Item'
+import CircularProgrss from '@material-ui/core/CircularProgress'
 
 import '../css/ItemList.css'
 
@@ -12,39 +13,35 @@ const ItemList = () => {
                 let datos =[
                 {
                     id: 0,
-                    title: 'The Burger Company',
-                    direccion: 'Honduras 4733',
-                    tipo: 'Hamburguesas',
-                    exp: '"Cuando te pones una campera que no usas hace un monton, metes la mano en el bolsillo y encontras plata, que igualmente es tuya"',
+                    title: 'Producto 1',
+                    tipo: 'Categoria de indumentaria',
+                    desc: 'Descripcion de producto. Medidas de los talles: ',
                     logo: '../img/lugares/burgerCompany.png',
-                    dispo: 7
+                    stock: 7
                 },
                 {
                     id: 1,
-                    title: 'Campo Bravo',
-                    direccion: 'Honduras 5600',
-                    tipo: 'Comida celíaca',
-                    exp: 'No lo sabemos',
+                    title: 'Producto 2',
+                    tipo: 'Categoria de indumentaria',
+                    desc: 'Descripcion de producto. Medidas de los talles: ',
                     logo: '../img/lugares/burgerCompany.png',
-                    dispo: 4
+                    stock: 4
                 },
                 {
                     id: 2,
-                    title: 'El Tejano',
-                    direccion: 'Av. Cordoba 5267',
-                    tipo: 'Restobar',
-                    exp: '"Como el fideo Di Maria cuando metió ese gol que se lo terminó dedicando a la abuela"',
+                    title: 'Producto 3',
+                    tipo: 'Categoria de indumentaria',
+                    desc: 'Descripcion de producto. Medidas de los talles: ',
                     logo: '../img/lugares/burgerCompany.png',
-                    dispo: 8
+                    stock: 8
                 },
                 {
                     id: 3,
-                    title: 'Foster Nutrition',
-                    direccion: 'Tucuman 422',
-                    tipo: 'Smart restaurant',
-                    exp: '"Como Marty McFly cuando la madre le empieza a tirar onda"',
+                    title: 'Producto 4',
+                    tipo: 'Categoria de indumentaria',
+                    desc: 'Descripcion de producto. Medidas de los talles: ',
                     logo: '../img/lugares/burgerCompany.png',
-                    dispo: 10
+                    stock: 10
                 }
                 ];
                 setTimeout(()=>{
@@ -65,18 +62,17 @@ const ItemList = () => {
 
     return (
         <div className='ItemList'>
-            {
-                lugares.map((lugar)=>
-                <Item
-                    key={lugar.id} 
-                    title={lugar.title} 
-                    direccion={lugar.direccion} 
-                    tipo={lugar.tipo} 
-                    exp={lugar.exp} 
-                    logo={lugar.logo}
-                    dispo={lugar.dispo}
-                />)
-            }
+                {
+                    lugares.length > 0 ? lugares.map((lugar)=>
+                    <Item
+                        key={lugar.id} 
+                        title={lugar.title} 
+                        tipo={lugar.tipo} 
+                        desc={lugar.desc} 
+                        logo={lugar.logo}
+                        stock={lugar.stock}
+                    />) : <CircularProgrss color='secondary'/>
+                }
         </div>
     )
 }

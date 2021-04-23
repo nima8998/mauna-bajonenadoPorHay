@@ -1,6 +1,6 @@
 import React from 'react'
-import '../css/ItemListContainer.css'
 import ItemList from '../Components/ItemList'
+import '../css/ItemListContainer.css'
 
 export const ItemListContainer = () =>{
     return (

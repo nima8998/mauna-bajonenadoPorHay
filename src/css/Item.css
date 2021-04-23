@@ -1,6 +1,7 @@
 .MuiCard-root {
     width: 350px;
     padding: 10px;
+    font-size: 12px;
 }
 
 img {
