@@ -1,0 +1,34 @@
+.ItemDetail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5rem;
+}
+
+.ItemDetail__description{
+    padding: 1rem;
+    margin-top: 2rem; 
+}
+
+.ItemDetail__description>ul{
+    padding: 0;
+    list-style-type: none;
+}
+
+ul>li{
+    margin: 1rem 0;
+}
+
+.ItemDetail__info{
+    align-self: flex-start;
+}
+
+.ItemDetail__info>p{
+    text-align: center;
+    font-size: 32px;
+    color: #6064BF;
+}
+
+.ItemDetail__info-add{
+    margin: 10rem 0;
+}

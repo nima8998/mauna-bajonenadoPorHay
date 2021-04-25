@@ -1,6 +1,6 @@
 import "./css/App.css";
 import Feed from "./Components/Feed";
-import Index from "./Components/Index.jsx";
+import Index from "./Components/Index";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {

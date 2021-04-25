@@ -13,49 +13,26 @@ const ItemList = () => {
                 let datos =[
                 {
                     id: 0,
-                    title: 'Producto 1',
-                    tipo: 'Categoria de indumentaria',
+                    title: 'Buzo',
+                    tipo: 'Buzo',
                     desc: 'Descripcion de producto. Medidas de los talles: ',
-                    logo: '../img/lugares/burgerCompany.png',
+                    logo: '/img/products/buzo.jpeg',
                     stock: 7
                 },
                 {
                     id: 1,
-                    title: 'Producto 2',
-                    tipo: 'Categoria de indumentaria',
+                    title: 'Pantalon',
+                    tipo: 'Pantalon',
                     desc: 'Descripcion de producto. Medidas de los talles: ',
-                    logo: '../img/lugares/burgerCompany.png',
+                    logo: '/img/products/pantalon.jpeg',
                     stock: 4
-                },
-                {
-                    id: 2,
-                    title: 'Producto 3',
-                    tipo: 'Categoria de indumentaria',
-                    desc: 'Descripcion de producto. Medidas de los talles: ',
-                    logo: '../img/lugares/burgerCompany.png',
-                    stock: 8
-                },
-                {
-                    id: 3,
-                    title: 'Producto 4',
-                    tipo: 'Categoria de indumentaria',
-                    desc: 'Descripcion de producto. Medidas de los talles: ',
-                    logo: '../img/lugares/burgerCompany.png',
-                    stock: 10
-                }
-                ];
+                }];
                 setTimeout(()=>{
                     resolve(datos)
                 }, 2000)
             })
             task.then((res)=>{
                 setLugares(res)
-            })
-            .catch(()=>{
-                console.error('Error en promise')
-            })
-            .finally(()=>{
-                console.log('Promise ok')
             })
 
         }, [])

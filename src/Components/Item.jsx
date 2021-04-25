@@ -5,18 +5,15 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import ItemCount from './ItemCount'
 import Talle from './Talle'
-import logo from '../img/productoLogo.jpeg'
+
 import '../css/Item.css'
 
 const Item = (props, tipo, desc) => {
-    console.log(props)
     return (
         <Card>
             <CardHeader title={props.title}/>
 
-            <CardMedia>
-                <img src={logo} alt='logo'/>
-            </CardMedia>
+            <CardMedia image={props.logo}/>
 
             <CardContent component='b'>
                 {tipo=props.tipo}
