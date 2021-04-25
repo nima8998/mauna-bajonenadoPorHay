@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import HeroIndex from '../img/flat-people/flat0.png'
 import Button from '@material-ui/core/Button'
 
@@ -13,7 +14,7 @@ export default function Index() {
             <div className="Index__greetings">
                 <h1>¡Bienvenide!</h1>
                 <p>Digitalizá y potenciá tu emprendimiento 😎</p>
-                <Button variant='contained' color='secondary'>Ingresar</Button>
+                <Link to='/feed' className='Link'><Button variant='contained' color='secondary'>Ingresar</Button></Link>
             </div>
             
             <div className="container">

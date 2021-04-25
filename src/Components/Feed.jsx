@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar'
-import { ItemListContainer }  from '../container/ItemListContainer.jsx'
+import ItemDetailContainer from '../container/ItemDetailContainer'
 
 import '../css/Feed.css'
 
@@ -9,7 +9,7 @@ export default function Feed() {
         <div className="Feed">
             <NavBar />
             <div className="Feed_container">
-                <ItemListContainer />
+                <ItemDetailContainer/>
             </div>
         </div>
     )
