@@ -11,3 +11,7 @@
     margin: 0 30px;
     cursor: pointer;
 }
+.Link, .Link:visited{
+    color: #000;
+    text-decoration: none;
+}

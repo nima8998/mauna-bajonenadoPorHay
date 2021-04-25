@@ -1,33 +1,31 @@
 import React from 'react'
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import ItemCount from './ItemCount'
-import Talle from './Talle'
+import Button from '@material-ui/core/Button'
 
 import '../css/Item.css'
 
-const Item = (props, tipo, desc) => {
+const Item = (props) => {
     return (
         <Card>
-            <CardHeader title={props.title}/>
 
-            <CardMedia image={props.logo}/>
+            <div className='Item'>
+                <div className="Item__title">
+                    <p>{props.title}</p>
+                </div>
+                <div className='Item__image'>
+                    <img src={props.logo} alt='productImage'/>
+                </div>
+                <div className='Item__categoria'>
+                    <i>{props.tipo}</i>
+                </div>
+                <div className='Item__description'>
+                    <p>{props.desc}</p>
+                </div>
+                <div className="Item__ver">
+                    <Button variant='outlined' color='secondary'>VER MAS</Button>
+                </div>
+            </div>
 
-            <CardContent component='b'>
-                {tipo=props.tipo}
-            </CardContent>
-            
-            <CardContent component='p'>
-                    {desc=props.desc}
-            </CardContent>
-
-            <CardContent>
-                <Talle />
-            </CardContent>
-
-                <ItemCount stock={props.stock} />
 
         </Card>
     )

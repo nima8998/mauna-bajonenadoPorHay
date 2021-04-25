@@ -9,7 +9,7 @@ export default function ItemDetail({props}) {
 
         <div className='ItemDetail'>
             <div className="ItemDetail__image">
-                <img src={props.logo} alt="image"/>
+                <img src={props.logo} alt="imageProduct"/>
 
                 <div className='ItemDetail__description'>
                     <ul>
@@ -31,26 +31,5 @@ export default function ItemDetail({props}) {
             </div>
         </div>
         
-            // <Card>
-            //     <CardHeader title={props.title} />            
-            //     <CardMedia image={props.logo}/>
-            //     <CardContent component='b'>
-            //         {props.categoria}
-            //     </CardContent>
-            //     <CardContent component='p'>
-            //         {props.description}
-            //     </CardContent>
-
-            //     <CardContent>
-            //         <Talle/>
-            //     </CardContent>
-
-            //     <CardContent component='h2'>
-            //         $ {props.precio}
-            //     </CardContent>
-
-            //     <ItemCount stock={props.stock}/>
-
-            // </Card>
     )
 }

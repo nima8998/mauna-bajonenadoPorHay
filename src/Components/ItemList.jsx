@@ -13,17 +13,17 @@ const ItemList = () => {
                 let datos =[
                 {
                     id: 0,
-                    title: 'Buzo',
+                    title: 'Buzo not a Brand',
                     tipo: 'Buzo',
-                    desc: 'Descripcion de producto. Medidas de los talles: ',
+                    desc: 'Buzo con capucha y tapaboca anexado. Estampa delantera',
                     logo: '/img/products/buzo.jpeg',
                     stock: 7
                 },
                 {
                     id: 1,
-                    title: 'Pantalon',
+                    title: 'Pantalon Mutant Black',
                     tipo: 'Pantalon',
-                    desc: 'Descripcion de producto. Medidas de los talles: ',
+                    desc: 'Pantalón tipo cargo con cintura elástica y cordón. Con cierre en rodilas desmontable.',
                     logo: '/img/products/pantalon.jpeg',
                     stock: 4
                 }];
