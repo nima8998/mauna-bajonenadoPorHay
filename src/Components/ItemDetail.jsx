@@ -15,8 +15,8 @@ export default function ItemDetail({props}) {
                     <ul>
                         <li>{props.description.info}</li>
                         <li>{props.description.terminacion}</li>
-                        <li>{props.description.material}</li>
-                        <li>{props.description.color}</li>
+                        <li>Material: {props.description.material}</li>
+                        <li>Color: {props.description.color}</li>
                     </ul>
                 </div>
             </div>
@@ -26,7 +26,7 @@ export default function ItemDetail({props}) {
                 <p>$ {props.precio}</p>
                 <div className='ItemDetail__info-add'>
                     <Talle/>
-                    <ItemCount/>
+                    <ItemCount stock={props.stock}/>
                 </div>
             </div>
         </div>

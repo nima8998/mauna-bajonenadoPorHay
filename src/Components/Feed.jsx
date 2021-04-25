@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar'
 import ItemDetailContainer from '../container/ItemDetailContainer'
-import ItemListContainer from '../container/ItemListContainer'
+// import ItemListContainer from '../container/ItemListContainer'
 
 import '../css/Feed.css'
 
@@ -10,7 +10,8 @@ export default function Feed() {
 
             <div className="Feed">
                 <NavBar />
-                <ItemListContainer/>
+                <ItemDetailContainer/>
+                {/* <ItemListContainer/> */}
             </div>
     )
 }
