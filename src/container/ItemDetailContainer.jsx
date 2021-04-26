@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import ItemDetail from '../Components/ItemDetail'
-import CircularProgress  from '@material-ui/core/CircularProgress'
-
+import CircularProgress from '@material-ui/core/CircularProgress'
 import '../css/ItemDetailContainer.css'
 
 export default function ItemDetailContainer() {

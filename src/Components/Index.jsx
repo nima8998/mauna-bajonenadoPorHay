@@ -12,7 +12,7 @@ export default function Index() {
     return (
         <div className='Index'>
             <div className="Index__greetings">
-                <h1>¡Bienvenide!</h1>
+                <h1>¡Bienvenid@!</h1>
                 <p>Digitalizá y potenciá tu emprendimiento 😎</p>
                 <Link to='/feed' className='Link'><Button variant='contained' color='secondary'>Ingresar</Button></Link>
             </div>

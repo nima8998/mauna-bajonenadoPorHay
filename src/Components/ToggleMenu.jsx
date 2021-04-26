@@ -8,8 +8,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 
 export default function ToggleMenu() {
-
-
     const [open, setOpen] = useState(false);
     const anchorRef = useRef(null);
 

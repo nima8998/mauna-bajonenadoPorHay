@@ -13,13 +13,13 @@ const Item = (props) => {
                     <p>{props.title}</p>
                 </div>
                 <div className='Item__image'>
-                    <img src={props.logo} alt='productImage'/>
+                    <img src={`/img/products/${props.logo}`} alt='productImage'/>
                 </div>
                 <div className='Item__categoria'>
-                    <i>{props.tipo}</i>
+                    {/* <i>{props.tipo}</i> */}
                 </div>
                 <div className='Item__description'>
-                    <p>{props.desc}</p>
+                    {/* <p>{props.desc}</p> */}
                 </div>
                 <div className="Item__ver">
                     <Button variant='outlined' color='secondary'>VER MAS</Button>
