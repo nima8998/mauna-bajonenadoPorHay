@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 
 import '../css/ItemDetail.css'
 
-export default function ItemDetail({props}) {
+export default function ItemDetail() {
 
     let { paramTitle, paramPrice, paramStock, paramImg, paramDesc } = useParams()
      

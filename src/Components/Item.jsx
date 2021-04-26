@@ -10,16 +10,10 @@ const Item = (props) => {
 
             <div className='Item'>
                 <div className="Item__title">
-                    <p>{props.title}</p>
+                    <p>{props.tipo}</p>
                 </div>
                 <div className='Item__image'>
                     <img src={`/img/products/${props.logo}`} alt='productImage'/>
-                </div>
-                <div className='Item__categoria'>
-                    {/* <i>{props.tipo}</i> */}
-                </div>
-                <div className='Item__description'>
-                    {/* <p>{props.desc}</p> */}
                 </div>
                 <div className="Item__ver">
                     <Button variant='outlined' color='secondary'>VER MAS</Button>

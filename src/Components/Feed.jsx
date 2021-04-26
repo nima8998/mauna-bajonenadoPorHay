@@ -20,7 +20,11 @@ export default function Feed() {
                             <ItemDetailContainer/>
                         </Route>
 
-                        <Route>
+                        <Route path='/category'>
+                            <ItemListContainer/>
+                        </Route>
+
+                        <Route path='/'>
                             <ItemListContainer/>
                         </Route>
                     </Switch>    

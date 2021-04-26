@@ -14,7 +14,7 @@ export default function Index() {
             <div className="Index__greetings">
                 <h1>¡Bienvenid@!</h1>
                 <p>Digitalizá y potenciá tu emprendimiento 😎</p>
-                <Link to='/feed' className='Link'><Button variant='contained' color='secondary'>Ingresar</Button></Link>
+                <Link to='/feed' className='Link'><Button variant='contained' color='secondary'>ver demo</Button></Link>
             </div>
             
             <div className="container">
