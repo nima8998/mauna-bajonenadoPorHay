@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import ItemList from '../Components/ItemList'
 import CircularProgrss from '@material-ui/core/CircularProgress'
-// import {Link} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import '../css/ItemListContainer.css'
 
 let ItemListContainer = () =>{
-        let [articulo, setArticulo] = useState ([])
-    
+    let [articulo, setArticulo] = useState ([])
+    let { paramCategory } = useParams()
 
     useEffect(()=>{
         let task = new Promise((resolve, reject) =>{
@@ -86,9 +86,11 @@ let ItemListContainer = () =>{
     return (
         <div className="ItemListContainer">
             {
-                articulo.length > 0 ? articulo.map((dato)=>
-                    <ItemList props={dato}/>
-                ) : <CircularProgrss color='secondary'/>
+                articulo.length > 0 && paramCategory === undefined ? articulo.map((dato)=>
+                    <ItemList key={dato.id} props={dato}/>)
+                : paramCategory ? articulo.filter(x => x.tipo === `${paramCategory}`)
+                .map((dato)=><ItemList key={dato.id} props={dato}/>)
+                : <CircularProgrss color='secondary'/>
             }
         </div>
     )

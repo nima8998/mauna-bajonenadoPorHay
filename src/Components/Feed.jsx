@@ -23,6 +23,10 @@ export default function Feed() {
                         <Route path='/feed'>
                             <ItemListContainer/>
                         </Route>
+
+                        <Route path='/:paramCategory'>
+                            <ItemListContainer/>
+                        </Route>
                     </Switch>    
                 </BrowserRouter>   
             </div>
