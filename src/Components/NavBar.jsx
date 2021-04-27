@@ -9,7 +9,7 @@ export default function Navbar() {
     return (
         <div className="header">
             <ul className="navbar">
-                <Link className='Link' to='/feed'><li className="navbar__links"><Button>Inicio</Button></li></Link>
+                <Link className='Link' to='/'><li className="navbar__links"><Button>Inicio</Button></li></Link>
                 <ToggleMenu />
                 <CartWidget/>
             </ul>

@@ -21,7 +21,7 @@ export default function ItemDetail() {
             </div>
 
             <div className="ItemDetail__info">
-                <h2>{paramTitle}</h2>
+                <h1>{paramTitle}</h1>
                 <p>$ {paramPrice}</p>
                 <div className='ItemDetail__info-add'>
                     <Talle/>

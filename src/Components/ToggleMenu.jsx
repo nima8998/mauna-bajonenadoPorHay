@@ -11,9 +11,9 @@ export default function ToggleMenu() {
         <div className="dropdown">
             <span className="dropbtn"><Button>CATEGORIAS</Button></span>
                 <div className="dropdown-content">
-                    <Link to='/Buzo'>Buzos</Link>
-                    <Link to='/Campera'>Camperas</Link>
-                    <Link to='/Camisa'>Camisas</Link>
+                    <Link to='/category/Buzo'>Buzos</Link>
+                    <Link to='/category/Campera'>Camperas</Link>
+                    <Link to='/category/Camisa'>Camisas</Link>
                 </div>
         </div>
     )

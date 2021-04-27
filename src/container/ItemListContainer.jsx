@@ -13,7 +13,7 @@ let ItemListContainer = () =>{
                 let datos =[
                 {
                     id: 0,
-                    title: 'Buzo not a Brand',
+                    title: 'BUZO NOT A BRAND',
                     tipo: 'Buzo',
                     desc: 'Buzo con capucha y tapaboca anexado. Estampa delantera',
                     logo: 'buzo.jpeg',
@@ -89,7 +89,7 @@ let ItemListContainer = () =>{
                 articulo.length > 0 && paramCategory === undefined ? articulo.map((dato)=>
                     <ItemList key={dato.id} props={dato}/>)
                 : articulo.length > 0 && paramCategory ? articulo.filter(x => x.tipo === `${paramCategory}`)
-                .map((dato)=><ItemList key={dato.id} props={dato}/>)
+                    .map((dato)=><ItemList key={dato.id} props={dato}/>)
                 : <CircularProgrss color='secondary'/>
             }
         </div>
