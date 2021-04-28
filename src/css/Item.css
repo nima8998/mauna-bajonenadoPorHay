@@ -15,12 +15,8 @@
     font-size: 24px;
 }
 
-.Item__description>p{
-    font-size: 16px;
-    margin: 2rem 0;
-}
-
 .Item__image>img {
     width: 350px;
-    border-radius: 10px;
+    max-width: 350px;
+    border-radius: 5px;
 }

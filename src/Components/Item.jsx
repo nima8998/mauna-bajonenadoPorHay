@@ -9,7 +9,7 @@ const Item = (articulo) => {
 
             <div className='Item'>
                 <div className="Item__title">
-                    <p>{articulo.title}</p>
+                    <h3>{articulo.title}</h3>
                 </div>
                 <div className='Item__image'>
                     <img src={`/img/products/${articulo.logo}`} alt='productImage'/>
