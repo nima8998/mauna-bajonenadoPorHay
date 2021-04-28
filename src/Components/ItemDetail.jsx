@@ -1,31 +1,28 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 import Talle from './Talle'
-import { useParams } from 'react-router-dom'
 
 import '../css/ItemDetail.css'
 
-export default function ItemDetail() {
+export default function ItemDetail({props}) {
 
-    let { paramTitle, paramPrice, paramStock, paramImg, paramDesc } = useParams()
-     
     return (
 
         <div className='ItemDetail'>
             <div className="ItemDetail__image">
-                <img src={`/img/products/${paramImg}`} alt="imageProduct"/>
+                <img src={`/img/products/${props.logo}`} alt="imageProduct"/>
 
                 <div className='ItemDetail__description'>
-                    <p>{paramDesc}</p>
+                    <p>{props.desc}</p>
                 </div>
             </div>
 
             <div className="ItemDetail__info">
-                <h1>{paramTitle}</h1>
-                <p>$ {paramPrice}</p>
+                <h1>{props.title}</h1>
+                <p>$ {props.precio}</p>
                 <div className='ItemDetail__info-add'>
                     <Talle/>
-                    <ItemCount stock={paramStock}/>
+                    <ItemCount stock={props.stock}/>
                 </div>
             </div>
         </div>

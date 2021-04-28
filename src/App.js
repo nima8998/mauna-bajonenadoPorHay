@@ -11,7 +11,7 @@ function App() {
 				<NavBar />
 
 				<Switch>
-					<Route path="/item/:id/:paramTitle/:paramPrice/:paramStock/:paramImg/:paramDesc">
+					<Route path="/item/:paramId">
 						<ItemDetailContainer />
 					</Route>
 

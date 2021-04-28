@@ -11,7 +11,7 @@ const ItemList = ({props}) => {
         <div className='ItemList'>
                 {
                     <Link key={props.id} 
-                    to={`/item/id${props.id}/${props.title}/${props.precio}/${props.stock}/${props.logo}/${props.desc}`}>
+                    to={`/item/${props.id}`}>
                         <Item 
                         logo={props.logo}
                         tipo={props.tipo} 
