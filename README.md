@@ -1,6 +1,6 @@
 # e-Commerce con ReactJS
 
-Entrega intermedia del proyecto final de React para CoderHouse. 
+Entrega intermedia del proyecto final de React para CoderHouse.
 
 Lenguajes utilizados:
 
@@ -22,6 +22,3 @@ Version de React 17.0.2
 # Deploy the baby
 
 <code>npm start</code>
-
-# Test
-<code>npm test</code>
