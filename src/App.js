@@ -2,6 +2,7 @@ import "./css/App.css";
 import NavBar from "./Components/NavBar";
 import ItemDetailContainer from "./container/ItemDetailContainer";
 import ItemListContainer from "./container/ItemListContainer";
+import Footer from "./Components/Footer.jsx";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
 						<ItemListContainer />
 					</Route>
 				</Switch>
+
+				<Footer />
 			</BrowserRouter>
 		</div>
 	);

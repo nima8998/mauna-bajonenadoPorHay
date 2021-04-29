@@ -1,0 +1,10 @@
+.bg{
+    background-image: url(../img/Bg.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    mask-image: linear-gradient(to bottom, #000000, #00000000);
+    position: relative;
+    z-index: -1;
+}

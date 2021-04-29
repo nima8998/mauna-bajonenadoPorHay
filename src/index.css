@@ -3,13 +3,8 @@
 html {
   font-family: 'Montserrat',
   sans-serif;
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+  background-color: #eaeded;
+  min-height: 100%;
 }
 
 body {
