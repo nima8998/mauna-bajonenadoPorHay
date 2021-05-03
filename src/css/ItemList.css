@@ -1,8 +1,0 @@
-.ItemList{
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    column-gap: 1rem;
-    row-gap: 2rem;
-    flex-wrap: wrap;
-}

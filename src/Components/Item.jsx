@@ -1,34 +1,52 @@
 import React from 'react'
 import Card from '@material-ui/core/Card';
-import Button from '@material-ui/core/Button'
+import styled from 'styled-components'
 
-import '../css/Item.css'
+const Item = (articulo) => {
 
-const Item = (props) => {
+    let styleCard = {
+        width: '350px',
+        padding: '10px'
+    }
+
     return (
-        <Card>
+        <Card style={styleCard}>
 
-            <div className='Item'>
-                <div className="Item__title">
-                    <p>{props.title}</p>
-                </div>
-                <div className='Item__image'>
-                    <img src={props.logo} alt='productImage'/>
-                </div>
-                <div className='Item__categoria'>
-                    <i>{props.tipo}</i>
-                </div>
-                <div className='Item__description'>
-                    <p>{props.desc}</p>
-                </div>
-                <div className="Item__ver">
-                    <Button variant='outlined' color='secondary'>VER MAS</Button>
-                </div>
-            </div>
+            <ItemCard className='Item'>
+                <ItemTitle>
+                    {articulo.title}
+                </ItemTitle>
+                <Item__image>
+                    <img src={`/img/products/${articulo.logo}`} alt='productImage'/>
+                </Item__image>
+            </ItemCard>
 
 
         </Card>
     )
 }
 
-export default Item
+export default Item 
+
+const ItemCard = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+`
+
+const ItemTitle = styled.div`
+    font-size: 20px;
+    margin: 15px 0;
+    font-weight: 600;
+`
+
+const Item__image = styled.div`
+    img{
+        width: 350px;
+        max-width: 350px;
+        border-radius: 5px;
+    }
+`
+

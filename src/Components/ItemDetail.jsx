@@ -1,35 +1,71 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 import Talle from './Talle'
-
-import '../css/ItemDetail.css'
+import styled from 'styled-components'
 
 export default function ItemDetail({props}) {
+
     return (
 
-        <div className='ItemDetail'>
+        <Detail>
             <div className="ItemDetail__image">
-                <img src={props.logo} alt="imageProduct"/>
+                <img src={`/img/products/${props.logo}`} alt="imageProduct"/>
 
-                <div className='ItemDetail__description'>
-                    <ul>
-                        <li>{props.description.info}</li>
-                        <li>{props.description.terminacion}</li>
-                        <li>Material: {props.description.material}</li>
-                        <li>Color: {props.description.color}</li>
-                    </ul>
-                </div>
+                <Description>
+                    <p>{props.desc}</p>
+                </Description>
             </div>
 
-            <div className="ItemDetail__info">
-                <h2>{props.title}</h2>
-                <p>$ {props.precio}</p>
-                <div className='ItemDetail__info-add'>
+            <PayInformation>
+                <h1>{props.title}</h1>
+                <h2>$ {props.precio}</h2>
+
+                <PayAdd>
                     <Talle/>
                     <ItemCount stock={props.stock}/>
-                </div>
-            </div>
-        </div>
+                </PayAdd>
+
+            </PayInformation>
+        </Detail>
         
     )
 }
+
+
+const Detail = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    column-gap: 5rem;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 5px 5px 15px #e4e4e4;
+    margin: 3rem;
+    background-color: white;
+    
+    img{
+        width: 100%;
+        border-radius: 5px;
+    }
+`
+
+const Description = styled.div`
+    padding: 1rem;
+    margin-top: 2rem;
+`
+const PayInformation = styled.div`
+    align-self: flex-start;
+    text-align: center;
+    
+    h2 {
+        text-align: center;
+        font-size: 42px;
+        color: #6064BF;
+        font-weight: 600;
+    }
+`
+
+const PayAdd = styled.div`
+    margin: 10rem 0;
+`

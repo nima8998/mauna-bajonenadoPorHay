@@ -1,14 +1,16 @@
 import React from 'react'
 import Cart from '@material-ui/icons/ShoppingCartOutlined'
+import styled from 'styled-components'
 
 export default function CartWidget() {
-    let style={
-        marginLeft: '5rem'
-    }
 
     return (
-        <div>
-            <Cart color="primary" style={style}/>
-        </div>
+        <CartIcon>
+            <Cart color="primary"/>
+        </CartIcon>
     )
 }
+
+const CartIcon = styled.div`
+    margin-left: 35px
+`

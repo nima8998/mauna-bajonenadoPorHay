@@ -1,21 +1,31 @@
 import "./css/App.css";
-import Feed from "./Components/Feed";
-import Index from "./Components/Index";
+import NavBar from "./Components/NavBar";
+import ItemDetailContainer from "./container/ItemDetailContainer";
+import ItemListContainer from "./container/ItemListContainer";
+import Footer from "./Components/Footer.jsx";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
+				<NavBar />
+
 				<Switch>
-					<Route path="/feed">
-						<Feed />
+					<Route path="/item/:paramId">
+						<ItemDetailContainer />
 					</Route>
 
-					<Route exact path="/">
-						<Index />
+					<Route path="/category/:paramCategory">
+						<ItemListContainer />
+					</Route>
+
+					<Route path="/">
+						<ItemListContainer />
 					</Route>
 				</Switch>
+
+				<Footer />
 			</BrowserRouter>
 		</div>
 	);

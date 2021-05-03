@@ -1,67 +1,54 @@
-import React, {useState, useRef} from 'react'
-import Button from '@material-ui/core/Button';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Button from '@material-ui/core/Button'
+import styled from 'styled-components'
 
 export default function ToggleMenu() {
 
-
-    const [open, setOpen] = useState(false);
-    const anchorRef = useRef(null);
-
-    const handleToggle = () => {
-        setOpen((prevOpen) => !prevOpen);
-    };
-
-
-    const handleClose = (event) => {
-        if (anchorRef.current && anchorRef.current.contains(event.target)) {
-            return;
-        }
-
-        setOpen(false);
-    };
-
-  function handleListKeyDown(event) {
-    if (event.key === 'Tab') {
-      event.preventDefault();
-      setOpen(false);
-    }
-  }
-  
     return (
-        <div>
-            <Button
-            ref={anchorRef}
-            aria-controls={open ? 'menu-list-grow' : undefined}
-            aria-haspopup="true"
-            onClick={handleToggle}
-            >
-            Categorias
-            </Button>
-
-            <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
-            {({ TransitionProps, placement }) => (
-                <Grow
-                {...TransitionProps}
-                style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-                >
-                <Paper>
-                    <ClickAwayListener onClickAway={handleClose}>
-                    <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                        <MenuItem onClick={handleClose}>Buzos</MenuItem>
-                        <MenuItem onClick={handleClose}>Pantalones</MenuItem>
-                        <MenuItem onClick={handleClose}>Logout</MenuItem>
-                    </MenuList>
-                    </ClickAwayListener>
-                </Paper>
-                </Grow>
-            )}
-            </Popper>
-        </div>
+        <DropDown>
+            <span className="dropbtn"><Button>CATEGORIAS</Button></span>
+                <DropDownContent className='DropDownContent'>
+                    <Link to='/category/Buzo'>Buzos</Link>
+                    <Link to='/category/Campera'>Camperas</Link>
+                    <Link to='/category/Camisa'>Camisas</Link>
+                </DropDownContent>
+        </DropDown>
     )
 }
+
+const DropDown = styled.div`
+    position: relative;
+    display: inline-block;
+
+    &:hover .DropDownContent{
+        display: block;
+    }
+
+    a{
+        &:hover{
+            background: #ececec;
+        }
+
+        &:visited{
+            color: #000;
+            text-decoration: none;
+        }
+    } 
+`
+
+const DropDownContent = styled.div`
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    a{
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+`

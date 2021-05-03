@@ -1,57 +1,38 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Item from '../Components/Item'
-import CircularProgrss from '@material-ui/core/CircularProgress'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
-import '../css/ItemList.css'
-
-const ItemList = () => {
-    let [lugares, setLugares] = useState ([])
-
+const ItemList = ({props}) => {
     
-    useEffect(()=>{
-        let task = new Promise((resolve, reject) =>{
-                let datos =[
-                {
-                    id: 0,
-                    title: 'Buzo not a Brand',
-                    tipo: 'Buzo',
-                    desc: 'Buzo con capucha y tapaboca anexado. Estampa delantera',
-                    logo: '/img/products/buzo.jpeg',
-                    stock: 7
-                },
-                {
-                    id: 1,
-                    title: 'Pantalon Mutant Black',
-                    tipo: 'Pantalon',
-                    desc: 'Pantalón tipo cargo con cintura elástica y cordón. Con cierre en rodilas desmontable.',
-                    logo: '/img/products/pantalon.jpeg',
-                    stock: 4
-                }];
-                setTimeout(()=>{
-                    resolve(datos)
-                }, 2000)
-            })
-            task.then((res)=>{
-                setLugares(res)
-            })
-
-        }, [])
-
     return (
-        <div className='ItemList'>
-                {
-                    lugares.length > 0 ? lugares.map((lugar)=>
-                    <Item
-                        key={lugar.id} 
-                        title={lugar.title} 
-                        tipo={lugar.tipo} 
-                        desc={lugar.desc} 
-                        logo={lugar.logo}
-                        stock={lugar.stock}
-                    />) : <CircularProgrss color='secondary'/>
-                }
-        </div>
+        <ItemContainer>
+            {
+                <Link key={props.id} 
+                to={`/item/${props.id}`}>
+                    <Item 
+                    logo={props.logo}
+                    tipo={props.tipo} 
+                    title={props.title}             
+                    />
+                </Link>
+            }
+        </ItemContainer>
     )
+
 }
 
 export default ItemList
+
+const ItemContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    column-gap: 1rem;
+    row-gap: 2rem;
+    flex-wrap: wrap;
+
+    a{
+        text-decoration: none;
+    }
+`
