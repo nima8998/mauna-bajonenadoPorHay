@@ -1,13 +1,12 @@
 import React from 'react'
 import Item from '../Components/Item'
 import { Link } from 'react-router-dom'
-
-import '../css/ItemList.css'
+import styled from 'styled-components'
 
 const ItemList = ({props}) => {
     
     return (
-        <div className='ItemList'>
+        <ItemContainer>
             {
                 <Link key={props.id} 
                 to={`/item/${props.id}`}>
@@ -18,9 +17,22 @@ const ItemList = ({props}) => {
                     />
                 </Link>
             }
-        </div>
+        </ItemContainer>
     )
 
 }
 
 export default ItemList
+
+const ItemContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    column-gap: 1rem;
+    row-gap: 2rem;
+    flex-wrap: wrap;
+
+    a{
+        text-decoration: none;
+    }
+`

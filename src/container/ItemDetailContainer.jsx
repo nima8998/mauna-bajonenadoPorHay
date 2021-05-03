@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import ItemDetail from '../Components/ItemDetail'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import {useParams} from 'react-router-dom'
-import '../css/ItemDetailContainer.css'
+import styled from 'styled-components'
 
 
 export default function ItemDetailContainer() {
@@ -90,12 +90,20 @@ export default function ItemDetailContainer() {
         },[])
         
     return (
-        <div className='ItemDetailContainer'>
+        <ItemDetalContainer>
             {
                 item.length > 0 ? <ItemDetail props={item[0]}/> : <CircularProgress color='secondary'/>
             }
-        </div>
-
-        
+        </ItemDetalContainer>
     )
+
 }
+
+    const ItemDetalContainer = styled.div`
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        margin: auto;
+    `

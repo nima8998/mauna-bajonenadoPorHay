@@ -3,7 +3,7 @@ import ItemList from '../Components/ItemList'
 import CircularProgrss from '@material-ui/core/CircularProgress'
 import { useParams } from 'react-router-dom'
 import Bg from '../Components/Bg'
-import '../css/ItemListContainer.css'
+import styled from 'styled-components'
 
 let ItemListContainer = () =>{
     let [articulo, setArticulo] = useState ([])
@@ -84,10 +84,11 @@ let ItemListContainer = () =>{
             setArticulo(res)
         })
     }, [])
+
     return (
         <div>
             <Bg/>
-            <div className="ItemListContainer">
+            <Container>
                 {
                     articulo.length > 0 && paramCategory === undefined ? articulo.map((dato)=>
                     <ItemList key={dato.id} props={dato}/>)
@@ -95,9 +96,21 @@ let ItemListContainer = () =>{
                     .map((dato)=><ItemList key={dato.id} props={dato}/>)
                     : <CircularProgrss color='secondary'/>
                 }
-            </div>
+            </Container>
         </div>
     )
 }
+
+const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+    row-gap: 5rem;
+    margin: auto;
+    max-width: 1300px;
+    margin-top: -200px;
+`
 
 export default ItemListContainer

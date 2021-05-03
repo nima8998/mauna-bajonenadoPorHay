@@ -1,20 +1,54 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
-import '../css/ToggleMenu.css'
-
+import styled from 'styled-components'
 
 export default function ToggleMenu() {
 
     return (
-
-        <div className="dropdown">
+        <DropDown>
             <span className="dropbtn"><Button>CATEGORIAS</Button></span>
-                <div className="dropdown-content">
+                <DropDownContent className='DropDownContent'>
                     <Link to='/category/Buzo'>Buzos</Link>
                     <Link to='/category/Campera'>Camperas</Link>
                     <Link to='/category/Camisa'>Camisas</Link>
-                </div>
-        </div>
+                </DropDownContent>
+        </DropDown>
     )
 }
+
+const DropDown = styled.div`
+    position: relative;
+    display: inline-block;
+
+    &:hover .DropDownContent{
+        display: block;
+    }
+
+    a{
+        &:hover{
+            background: #ececec;
+        }
+
+        &:visited{
+            color: #000;
+            text-decoration: none;
+        }
+    } 
+`
+
+const DropDownContent = styled.div`
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    a{
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+`

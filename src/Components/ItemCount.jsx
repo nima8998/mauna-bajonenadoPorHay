@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import Button from '@material-ui/core/Button'
 import AddCart from '@material-ui/icons/AddShoppingCartOutlined'
-
-import '../css/ItemCount.css'
+import styled from 'styled-components'
 
 export default function ItemCount({stock}) {
     let disabled = false
@@ -29,14 +28,30 @@ export default function ItemCount({stock}) {
     }
     
     return (
-        <div className='ItemCount'>
-            <p>Stock stocknible: <span className='dispoLocal'>{stockLocal}</span></p>
-            <div className='dispo'>
+        <Count>
+            <p>Stock disponible: <StockLocal>{stockLocal}</StockLocal></p>
+            <Stock>
                 <Button variant='outlined' color='secondary' size='small' onClick={restar} disabled={disabled}>-</Button>
-                <span className='dispoCliente'>{stockCliente}</span>
+                <StockCliente>{stockCliente}</StockCliente>
                 <Button variant='outlined' color='primary' size='small' onClick={sumar} disabled={disabled}>+</Button>
-            </div>
+            </Stock>
             <Button variant='outlined' color='primary' size='small'>Agregar al carrito <AddCart color='primary' fontSize='small'/></Button>
-        </div>
+        </Count>
     )
 }
+
+const Count = styled.div`
+    font-size: 14px;
+`
+
+const Stock = styled.div`
+    margin: 1.5rem 0;
+`
+const StockLocal = styled.div`
+    font-weight: 600;
+`
+
+const StockCliente = styled.span`
+    margin: 0 1.5rem;
+    font-weight: 600;
+`
