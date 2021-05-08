@@ -16,9 +16,9 @@ const Item = (articulo) => {
                 <ItemTitle>
                     {articulo.title}
                 </ItemTitle>
-                <Item__image>
+                <ItemImage>
                     <img src={`/img/products/${articulo.logo}`} alt='productImage'/>
-                </Item__image>
+                </ItemImage>
             </ItemCard>
 
 
@@ -42,7 +42,7 @@ const ItemTitle = styled.div`
     font-weight: 600;
 `
 
-const Item__image = styled.div`
+const ItemImage = styled.div`
     img{
         width: 350px;
         max-width: 350px;

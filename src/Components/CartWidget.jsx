@@ -1,12 +1,15 @@
 import React from 'react'
 import Cart from '@material-ui/icons/ShoppingCartOutlined'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export default function CartWidget() {
 
     return (
         <CartIcon>
-            <Cart color="primary"/>
+            <Link to='/checkout'>
+                <Cart color="primary"/>
+            </Link>
         </CartIcon>
     )
 }

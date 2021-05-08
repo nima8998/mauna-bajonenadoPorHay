@@ -18,7 +18,7 @@ export default function Footer() {
                 <li>Instagram</li>
                 <li>Tik Tok</li>
             </ul>
-            <ul>CartIcon
+            <ul>
                 <li>Contacto</li>
                 <li>Nosotros</li>
                 <li>Donde estamos</li>
