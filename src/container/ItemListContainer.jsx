@@ -85,15 +85,15 @@ let ItemListContainer = () =>{
         })
     }, [])
 
+
+
     return (
         <div>
             <Bg/>
             <Container>
                 {
-                    articulo.length > 0 && paramCategory === undefined ? articulo.map((dato)=>
-                    <ItemList key={dato.id} props={dato}/>)
-                    : articulo.length > 0 && paramCategory ? articulo.filter(x => x.tipo === `${paramCategory}`)
-                    .map((dato)=><ItemList key={dato.id} props={dato}/>)
+                    articulo.length > 0 && paramCategory === undefined ? articulo.map((dato)=><ItemList key={dato.id} props={dato}/>)
+                    : articulo.length > 0 && paramCategory ? articulo.filter(x =>x.tipo === `${paramCategory}`).map((dato)=><ItemList key={dato.id} props={dato}/>)
                     : <CircularProgrss color='secondary'/>
                 }
             </Container>

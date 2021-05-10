@@ -4,7 +4,6 @@ import Talle from './Talle'
 import styled from 'styled-components'
 
 export default function ItemDetail({props}) {
-
     return (
 
         <Detail>

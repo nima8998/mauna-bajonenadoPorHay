@@ -92,7 +92,11 @@ export default function ItemDetailContainer() {
     return (
         <ItemDetalContainer>
             {
-                item.length > 0 ? <ItemDetail props={item[0]}/> : <CircularProgress color='secondary'/>
+                item.length > 0 ? 
+                <ItemDetail 
+                    props={item[0]}
+                /> : 
+                <CircularProgress color='secondary'/>
             }
         </ItemDetalContainer>
     )

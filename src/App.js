@@ -5,32 +5,35 @@ import ItemListContainer from "./container/ItemListContainer";
 import Footer from "./Components/Footer";
 import CartContainer from "./container/CartContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { CartProvider } from "./Context/CartContext";
 
 function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
-				<NavBar />
+				<CartProvider>
+					<NavBar />
 
-				<Switch>
-					<Route path="/checkout">
-						<CartContainer />
-					</Route>
+					<Switch>
+						<Route path="/checkout">
+							<CartContainer />
+						</Route>
 
-					<Route path="/item/:paramId">
-						<ItemDetailContainer />
-					</Route>
+						<Route path="/item/:paramId">
+							<ItemDetailContainer />
+						</Route>
 
-					<Route path="/category/:paramCategory">
-						<ItemListContainer />
-					</Route>
+						<Route path="/category/:paramCategory">
+							<ItemListContainer />
+						</Route>
 
-					<Route path="/">
-						<ItemListContainer />
-					</Route>
-				</Switch>
+						<Route path="/">
+							<ItemListContainer />
+						</Route>
+					</Switch>
 
-				<Footer />
+					<Footer />
+				</CartProvider>
 			</BrowserRouter>
 		</div>
 	);

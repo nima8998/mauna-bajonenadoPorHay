@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Button from '@material-ui/core/Button'
 import AddCart from '@material-ui/icons/AddShoppingCartOutlined'
 import styled from 'styled-components'
+import { CartContext } from '../Context/CartContext'
 
 export default function ItemCount({stock}) {
     let disabled = false
 
     let [stockLocal, setStockLocal] = useState(stock)
     let [stockCliente, setStockCliente] = useState (0)
+
+    let [contextCantItems, setContextCantItems] = useContext(CartContext)
     
     let sumar = () =>{
         if (stockLocal === 0) {
@@ -15,6 +18,7 @@ export default function ItemCount({stock}) {
         }else{
             setStockLocal(stockLocal -1)
             setStockCliente(stockCliente +1)
+            setContextCantItems(contextCantItems +1)
         }
     }
 
@@ -24,18 +28,46 @@ export default function ItemCount({stock}) {
         }else{
             setStockLocal(stockLocal +1)
             setStockCliente(stockCliente -1)
+            setContextCantItems(contextCantItems -1)
         }
     }
     
-    return (
+return (
         <Count>
-            <p>Stock disponible: <StockLocal>{stockLocal}</StockLocal></p>
+            <span>Stock disponible: <StockLocal>{stockLocal}</StockLocal></span>
+
             <Stock>
-                <Button variant='outlined' color='secondary' size='small' onClick={restar} disabled={disabled}>-</Button>
+                <Button
+                    variant='outlined'
+                    color='secondary'
+                    size='small'
+                    onClick={restar}
+                    disabled={disabled}
+                >
+                    -
+                </Button>
+
                 <StockCliente>{stockCliente}</StockCliente>
-                <Button variant='outlined' color='primary' size='small' onClick={sumar} disabled={disabled}>+</Button>
+
+                <Button
+                    variant='outlined'
+                    color='primary'
+                    size='small'
+                    onClick={sumar}
+                    disabled={disabled}
+                >
+                    +
+                </Button>
+
             </Stock>
-            <Button variant='outlined' color='primary' size='small'>Agregar al carrito <AddCart color='primary' fontSize='small'/></Button>
+            <Button
+                variant='outlined'
+                color='primary'
+                size='small'
+            >
+                Agregar al carrito
+                <AddCart color='primary' fontSize='small'/>
+            </Button>
         </Count>
     )
 }
