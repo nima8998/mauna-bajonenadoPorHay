@@ -10,8 +10,8 @@ import { CartProvider } from "./Context/CartContext";
 function App() {
 	return (
 		<div className="App">
-			<BrowserRouter>
-				<CartProvider>
+			<CartProvider>
+				<BrowserRouter>
 					<NavBar />
 
 					<Switch>
@@ -33,8 +33,8 @@ function App() {
 					</Switch>
 
 					<Footer />
-				</CartProvider>
-			</BrowserRouter>
+				</BrowserRouter>
+			</CartProvider>
 		</div>
 	);
 }

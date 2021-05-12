@@ -1,15 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import ItemDetail from '../Components/ItemDetail'
 import CircularProgress from '@material-ui/core/CircularProgress'
-import {useParams} from 'react-router-dom'
+import ItemCountContainer from './ItemCountCointainer'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
+
+import {useCartContext} from '../Context/CartContext'
 
 
 export default function ItemDetailContainer() {
 
     let [item, setItem] = useState([]);
-    let { paramId } = useParams()    
+    let { paramId } = useParams()
 
+    let {addItems} = useCartContext()
 
     useEffect(() => {
         let getItem = () =>{
@@ -87,15 +91,24 @@ export default function ItemDetailContainer() {
         getItem().then(dato =>{
             let itemFilter = dato.filter(x => x.id === `${paramId}`)
             setItem(itemFilter)})
-        },[])
-        
+        },[]);
+
+        const onAdd = count =>{
+            addItems(count, item[0])
+        }
+
     return (
         <ItemDetalContainer>
+            {/* info del producto */}
             {
                 item.length > 0 ? 
-                <ItemDetail 
-                    props={item[0]}
-                /> : 
+                <ItemDetail props={item[0]}/> :
+                <CircularProgress color='secondary'/>
+            }
+            {/* componente para agregar cantidad y agregar al carrito */}
+            {
+                item.length > 0 ?
+                <ItemCountContainer props={item[0]} onAdd={onAdd}/> :
                 <CircularProgress color='secondary'/>
             }
         </ItemDetalContainer>

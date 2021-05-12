@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import CartDetail from './CartDetail'
 import CartCheckoutDetail from './CartCheckoutDetail'
 
-export default function Cart(datos) {
+export default function Cart() {
 
     return (
         <Container>
             <CartList>
-                <CartDetail props={datos} />
+                <CartDetail />
             </CartList>
             <CartCheckout>
                 <CartCheckoutDetail />

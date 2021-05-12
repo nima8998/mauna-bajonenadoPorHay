@@ -1,21 +1,49 @@
-import React from 'react'
-import Cart from '../Components/Cart'
+import React, {useContext} from 'react'
+import CartDetail from '../Components/CartDetail'
+import CartCheckoutDetail from '../Components/CartCheckoutDetail'
+import {CartContext} from '../Context/CartContext'
+import styled from 'styled-components'
 
 export default function CartContainer() {
 
-    let datos =
-        {
-            id: 0,
-            title: 'BUZO NOT A BRAND',
-            tipo: 'Buzo',
-            desc: 'Buzo con capucha y tapaboca anexado. Estampa delantera',
-            logo: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/219/431/products/2c08baea-f04b-41f4-b6ad-e7348ed3e7b51-5f346ff3e546cda3eb16166944921258-1024-1024.jpeg',
-            precio: '7.190',
-            stock: 2
-        }
-    
+    let {itemCart} = useContext(CartContext)
+    console.log(itemCart)
 
     return (
-        <Cart props={datos}/>
+        <Container>
+
+            <CartList>
+                {
+                    itemCart.length > 0 ? itemCart.map(item=> (
+                        <CartDetail props={item}/>
+                    )) :
+                    <h1>Anda a comprar, bro</h1>
+                }
+            </CartList>
+
+            <CartCheckout>
+                <CartCheckoutDetail />
+            </CartCheckout>
+
+        </Container>
     )
+    
 }
+
+const Container = styled.article`
+    height: calc(100vh - 400px);
+    display: flex;
+    margin: auto;
+    column-gap: 15px;
+    max-width: 1600px;
+`
+
+const CartList = styled.section`
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+`
+
+const CartCheckout = styled.section`
+    width: 550px;
+`

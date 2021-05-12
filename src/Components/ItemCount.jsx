@@ -1,24 +1,21 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import Button from '@material-ui/core/Button'
 import AddCart from '@material-ui/icons/AddShoppingCartOutlined'
 import styled from 'styled-components'
-import { CartContext } from '../Context/CartContext'
 
-export default function ItemCount({stock}) {
+export default function ItemCount({stock, onAdd}) {
+
     let disabled = false
-
     let [stockLocal, setStockLocal] = useState(stock)
     let [stockCliente, setStockCliente] = useState (0)
 
-    let [contextCantItems, setContextCantItems] = useContext(CartContext)
-    
+
     let sumar = () =>{
         if (stockLocal === 0) {
             disabled = true
         }else{
             setStockLocal(stockLocal -1)
             setStockCliente(stockCliente +1)
-            setContextCantItems(contextCantItems +1)
         }
     }
 
@@ -28,10 +25,13 @@ export default function ItemCount({stock}) {
         }else{
             setStockLocal(stockLocal +1)
             setStockCliente(stockCliente -1)
-            setContextCantItems(contextCantItems -1)
         }
     }
-    
+
+    const addToCart = () =>{
+        onAdd(stockCliente)
+    }
+
 return (
         <Count>
             <span>Stock disponible: <StockLocal>{stockLocal}</StockLocal></span>
@@ -61,12 +61,10 @@ return (
 
             </Stock>
             <Button
-                variant='outlined'
-                color='primary'
-                size='small'
+                onClick={( () => addToCart(stockCliente) )}
             >
                 Agregar al carrito
-                <AddCart color='primary' fontSize='small'/>
+            <AddCart color='primary' fontSize='small'/>
             </Button>
         </Count>
     )
@@ -86,4 +84,8 @@ const StockLocal = styled.div`
 const StockCliente = styled.span`
     margin: 0 1.5rem;
     font-weight: 600;
+`
+
+const Buy = styled.button`
+    cursor: pointer;
 `
