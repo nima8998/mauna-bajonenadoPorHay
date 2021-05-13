@@ -35,7 +35,7 @@ const Detail = styled.div`
     background-color: white;
     
     img{
-        width: 100%;
+        max-width: 550px;
         border-radius: 5px;
     }
 `

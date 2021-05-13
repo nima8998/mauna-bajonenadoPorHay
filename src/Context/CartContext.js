@@ -1,5 +1,4 @@
 import React, { createContext, useState, useContext } from "react";
-import { SettingsRemoteSharp } from "@material-ui/icons";
 
 export let CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
@@ -7,6 +6,7 @@ export const useCartContext = () => useContext(CartContext);
 export let CartProvider = ({ children }) => {
 	let [itemCart, setItemCart] = useState([]);
 
+	// FUNCTIONS Y CHECKEOS PARA EL CARRITO
 	// checkeo si item ya figura en el estado
 	const isInCart = (id) => {
 		const enElCart = itemCart.find((x) => x.id === id);
@@ -36,6 +36,7 @@ export let CartProvider = ({ children }) => {
 		}
 	};
 
+	// FUNCTION PARA INTERACTUAR EN /CHECKOUT
 	// devuelve el total del precio
 
 	const total = () => {
@@ -46,12 +47,13 @@ export let CartProvider = ({ children }) => {
 	// suma cantidades para mostrar el total de items en el estado
 	const getUnits = () => {
 		const unid = itemCart.reduce((a, b) => a + b.qty, 0);
+		return unid;
 	};
 
 	// sacar item
 	const removeItems = (item) => {
 		const newItems = itemCart.filter((x) => x.id !== item);
-		SettingsRemoteSharp(newItems);
+		setItemCart(newItems);
 	};
 
 	// vacia el estado

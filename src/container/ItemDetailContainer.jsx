@@ -14,6 +14,7 @@ export default function ItemDetailContainer() {
     let { paramId } = useParams()
 
     let {addItems} = useCartContext()
+    let [show, setShow] = useState(false)
 
     useEffect(() => {
         let getItem = () =>{
@@ -25,7 +26,7 @@ export default function ItemDetailContainer() {
                     tipo: 'Buzo',
                     desc: 'Buzo con capucha y tapaboca anexado. Estampa delantera',
                     logo: 'buzo.jpeg',
-                    precio: '7.190',
+                    precio: 7190,
                     stock: 2
                 },
                 {
@@ -34,7 +35,7 @@ export default function ItemDetailContainer() {
                     tipo: 'Buzo',
                     desc: 'Buzo corto con capucha  y cordon elastico',
                     logo: 'buzo1.jpeg',
-                    precio: '4.200',
+                    precio: 4200,
                     stock: 5
                 },
                 {
@@ -43,7 +44,7 @@ export default function ItemDetailContainer() {
                     tipo: 'Buzo',
                     desc: 'Buzo Canguro, con capucha y bordado 3d en el frente',
                     logo: 'buzo2.jpeg',
-                    precio: '4.390',
+                    precio: 4390,
                     stock: 7
                 },
                 {
@@ -51,7 +52,7 @@ export default function ItemDetailContainer() {
                     title: 'CAMISA ANIMAL WHITE',
                     tipo: 'Camisa',
                     desc: 'Camisa manga corta',
-                    precio: '2.990',
+                    precio: 2990,
                     logo: 'camisa.jpeg',
                     stock: 4
                 },
@@ -60,7 +61,7 @@ export default function ItemDetailContainer() {
                     title: 'CAMISA BATIK BLACK',
                     tipo: 'Camisa',
                     desc: 'Camisa Oversize de manga corta',
-                    precio: '3.690',
+                    precio: 3690,
                     logo: 'camisa1.jpeg',
                     stock: 2
                 },
@@ -69,7 +70,7 @@ export default function ItemDetailContainer() {
                     title: 'CAMPERA PUFFER KOTK BLACK',
                     tipo: 'Campera',
                     desc: 'Campera inflada con bolsillos con cierre y puños con boton. Cintura ajustabe con elasticos interos',
-                    precio: '19.900',
+                    precio: 19900,
                     logo: 'campera.jpeg',
                     stock: 6
                 },
@@ -78,7 +79,7 @@ export default function ItemDetailContainer() {
                     title: 'CAMPERA PUFFER KOTK RED',
                     tipo: 'Campera',
                     desc: 'Campera inflada con bolsillos con cierre y puños con boton. Cintura ajustabe con elasticos interos',
-                    precio: '19.900',
+                    precio: 19900,
                     logo: 'campera1.jpeg',
                     stock: 7
                 },
@@ -93,9 +94,13 @@ export default function ItemDetailContainer() {
             setItem(itemFilter)})
         },[]);
 
+        // function para agregar el item
         const onAdd = count =>{
             addItems(count, item[0])
+            setShow(true)
         }
+        
+        // setea el estado en true si el item filtrado esta en el car
 
     return (
         <ItemDetalContainer>
@@ -108,8 +113,9 @@ export default function ItemDetailContainer() {
             {/* componente para agregar cantidad y agregar al carrito */}
             {
                 item.length > 0 ?
-                <ItemCountContainer props={item[0]} onAdd={onAdd}/> :
-                <CircularProgress color='secondary'/>
+                <ItemCountContainer props={item[0]} onAdd={onAdd} show={show}/> 
+                :
+                null
             }
         </ItemDetalContainer>
     )

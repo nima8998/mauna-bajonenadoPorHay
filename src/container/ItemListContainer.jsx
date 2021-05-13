@@ -18,7 +18,7 @@ let ItemListContainer = () =>{
                     tipo: 'Buzo',
                     desc: 'Buzo con capucha y tapaboca anexado. Estampa delantera',
                     logo: 'buzo.jpeg',
-                    precio: '7.190',
+                    precio: '7190',
                     stock: 2
                 },
                 {
@@ -27,7 +27,7 @@ let ItemListContainer = () =>{
                     tipo: 'Buzo',
                     desc: 'Buzo corto con capucha  y cordon elastico',
                     logo: 'buzo1.jpeg',
-                    precio: '4.200',
+                    precio: '4200',
                     stock: 5
                 },
                 {
@@ -36,7 +36,7 @@ let ItemListContainer = () =>{
                     tipo: 'Buzo',
                     desc: 'Buzo Canguro, con capucha y bordado 3d en el frente',
                     logo: 'buzo2.jpeg',
-                    precio: '4.390',
+                    precio: '4390',
                     stock: 7
                 },
                 {
@@ -44,7 +44,7 @@ let ItemListContainer = () =>{
                     title: 'CAMISA ANIMAL WHITE',
                     tipo: 'Camisa',
                     desc: 'Camisa manga corta',
-                    precio: '2.990',
+                    precio: '2990',
                     logo: 'camisa.jpeg',
                     stock: 4
                 },
@@ -53,7 +53,7 @@ let ItemListContainer = () =>{
                     title: 'CAMISA BATIK BLACK',
                     tipo: 'Camisa',
                     desc: 'Camisa Oversize de manga corta',
-                    precio: '3.690',
+                    precio: '3690',
                     logo: 'camisa1.jpeg',
                     stock: 2
                 },
@@ -62,7 +62,7 @@ let ItemListContainer = () =>{
                     title: 'CAMPERA PUFFER KOTK BLACK',
                     tipo: 'Campera',
                     desc: 'Campera inflada con bolsillos con cierre y puños con boton. Cintura ajustabe con elasticos interos',
-                    precio: '19.900',
+                    precio: '19900',
                     logo: 'campera.jpeg',
                     stock: 6
                 },
@@ -71,7 +71,7 @@ let ItemListContainer = () =>{
                     title: 'CAMPERA PUFFER KOTK RED',
                     tipo: 'Campera',
                     desc: 'Campera inflada con bolsillos con cierre y puños con boton. Cintura ajustabe con elasticos interos',
-                    precio: '19.900',
+                    precio: '19900',
                     logo: 'campera1.jpeg',
                     stock: 7
                 },

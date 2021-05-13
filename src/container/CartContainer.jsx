@@ -2,12 +2,12 @@ import React, {useContext} from 'react'
 import CartDetail from '../Components/CartDetail'
 import CartCheckoutDetail from '../Components/CartCheckoutDetail'
 import {CartContext} from '../Context/CartContext'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 export default function CartContainer() {
 
     let {itemCart} = useContext(CartContext)
-    console.log(itemCart)
 
     return (
         <Container>
@@ -17,7 +17,8 @@ export default function CartContainer() {
                     itemCart.length > 0 ? itemCart.map(item=> (
                         <CartDetail props={item}/>
                     )) :
-                    <h1>Anda a comprar, bro</h1>
+
+                        <h1> Carrito vacía ¡Revisá nuestra <Link to='/'>tienda</Link>!</h1>
                 }
             </CartList>
 
@@ -42,6 +43,11 @@ const CartList = styled.section`
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
+    text-align: center;
+    a{
+        color: #f50057;
+        text-decoration: none;
+    }
 `
 
 const CartCheckout = styled.section`

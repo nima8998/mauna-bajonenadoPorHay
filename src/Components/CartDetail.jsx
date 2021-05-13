@@ -1,9 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import Button from '@material-ui/core/Button'
+
+import {useCartContext} from '../Context/CartContext'
 
 export default function CartDetail(props) {
     // maldito nesting
     let info = props.props;
+    let {removeItems} = useCartContext()
 
     return (
         <Container>
@@ -24,6 +28,14 @@ export default function CartDetail(props) {
                 {/* cantidad */}
                 <p>Cantidad: {info.qty}</p>
                 {/* Agregar componente que levante la cantidad y poder subirla o bajarla */}
+                <Button 
+                    size='small'
+                    variant='contained'
+                    color='secondary'
+                    onClick={()=>removeItems(info.id)}
+                >
+                    Eliminar
+                </Button>
                 {/* Agregar componente para eliminar producto del cart */}
             </ItemPrice>
             
@@ -34,11 +46,13 @@ export default function CartDetail(props) {
 const Container = styled.section`
     height: 200px;
     width: calc(100% - 2em);
-    border: 1px solid black;
+    border-right: 3px solid #3f51b5;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     padding: 5px;
-    margin: 5px;
-    margin-right: 5px;
+    margin-bottom: 2em;
     display: flex;
+    box-shadow: 5px 5px 10px #c8c8c8;
 `
 
 const ItemImage = styled.article`    
@@ -48,6 +62,7 @@ const ItemImage = styled.article`
 
     img{
         width: 100%;
+
     }
 `
 
