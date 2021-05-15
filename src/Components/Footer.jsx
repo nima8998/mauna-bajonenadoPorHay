@@ -8,9 +8,9 @@ export default function Footer() {
             <ul>
                 <p></p>
                 <li><Link to='/'>Inicio</Link></li>
-                <li><Link to='/category/Buzo'>Buzos</Link></li>
-                <li><Link to='/category/Campera'>Camperas</Link></li>
-                <li><Link to='/category/Camisa'>Camisas</Link></li>
+                <li><Link to='/category/buzos'>Buzos</Link></li>
+                <li><Link to='/category/camperas'>Camperas</Link></li>
+                <li><Link to='/category/camisas'>Camisas</Link></li>
             </ul>
             <ul>
                 <li>Facebook</li>
@@ -18,7 +18,7 @@ export default function Footer() {
                 <li>Instagram</li>
                 <li>Tik Tok</li>
             </ul>
-            <ul>CartIcon
+            <ul>
                 <li>Contacto</li>
                 <li>Nosotros</li>
                 <li>Donde estamos</li>

@@ -2,31 +2,39 @@ import "./css/App.css";
 import NavBar from "./Components/NavBar";
 import ItemDetailContainer from "./container/ItemDetailContainer";
 import ItemListContainer from "./container/ItemListContainer";
-import Footer from "./Components/Footer.jsx";
+import Footer from "./Components/Footer";
+import CartContainer from "./container/CartContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { CartProvider } from "./Context/CartContext";
 
 function App() {
 	return (
 		<div className="App">
-			<BrowserRouter>
-				<NavBar />
+			<CartProvider>
+				<BrowserRouter>
+					<NavBar />
 
-				<Switch>
-					<Route path="/item/:paramId">
-						<ItemDetailContainer />
-					</Route>
+					<Switch>
+						<Route path="/checkout">
+							<CartContainer />
+						</Route>
 
-					<Route path="/category/:paramCategory">
-						<ItemListContainer />
-					</Route>
+						<Route path="/item/:paramId">
+							<ItemDetailContainer />
+						</Route>
 
-					<Route path="/">
-						<ItemListContainer />
-					</Route>
-				</Switch>
+						<Route path="/category/:paramCategory">
+							<ItemListContainer />
+						</Route>
 
-				<Footer />
-			</BrowserRouter>
+						<Route path="/">
+							<ItemListContainer />
+						</Route>
+					</Switch>
+
+					<Footer />
+				</BrowserRouter>
+			</CartProvider>
 		</div>
 	);
 }

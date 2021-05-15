@@ -9,9 +9,9 @@ export default function ToggleMenu() {
         <DropDown>
             <span className="dropbtn"><Button>CATEGORIAS</Button></span>
                 <DropDownContent className='DropDownContent'>
-                    <Link to='/category/Buzo'>Buzos</Link>
-                    <Link to='/category/Campera'>Camperas</Link>
-                    <Link to='/category/Camisa'>Camisas</Link>
+                    <Link to='/category/buzos'>Buzos</Link>
+                    <Link to='/category/camperas'>Camperas</Link>
+                    <Link to='/category/camisas'>Camisas</Link>
                 </DropDownContent>
         </DropDown>
     )

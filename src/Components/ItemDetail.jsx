@@ -1,33 +1,23 @@
 import React from 'react'
-import ItemCount from './ItemCount'
-import Talle from './Talle'
 import styled from 'styled-components'
 
 export default function ItemDetail({props}) {
-
     return (
 
         <Detail>
             <div className="ItemDetail__image">
-                <img src={`/img/products/${props.logo}`} alt="imageProduct"/>
+                <ItemInformation>
+                    <h1>{props.title}</h1>
+                    <h2>$ {props.price}</h2>
+                
+                    <img src={props.image} alt="imageProduct"/>
 
-                <Description>
-                    <p>{props.desc}</p>
-                </Description>
+                    <ItemDescription>
+                        <p>{props.description}</p>
+                    </ItemDescription>
+                </ItemInformation>
             </div>
-
-            <PayInformation>
-                <h1>{props.title}</h1>
-                <h2>$ {props.precio}</h2>
-
-                <PayAdd>
-                    <Talle/>
-                    <ItemCount stock={props.stock}/>
-                </PayAdd>
-
-            </PayInformation>
-        </Detail>
-        
+        </Detail>        
     )
 }
 
@@ -45,16 +35,15 @@ const Detail = styled.div`
     background-color: white;
     
     img{
-        width: 100%;
+        max-width: 550px;
         border-radius: 5px;
     }
 `
-
-const Description = styled.div`
+const ItemDescription = styled.div`
     padding: 1rem;
     margin-top: 2rem;
 `
-const PayInformation = styled.div`
+const ItemInformation = styled.div`
     align-self: flex-start;
     text-align: center;
     
@@ -64,8 +53,4 @@ const PayInformation = styled.div`
         color: #6064BF;
         font-weight: 600;
     }
-`
-
-const PayAdd = styled.div`
-    margin: 10rem 0;
 `
