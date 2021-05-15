@@ -8,12 +8,12 @@ export default function ItemDetail({props}) {
             <div className="ItemDetail__image">
                 <ItemInformation>
                     <h1>{props.title}</h1>
-                    <h2>$ {props.precio}</h2>
+                    <h2>$ {props.price}</h2>
                 
-                    <img src={`/img/products/${props.logo}`} alt="imageProduct"/>
+                    <img src={props.image} alt="imageProduct"/>
 
                     <ItemDescription>
-                        <p>{props.desc}</p>
+                        <p>{props.description}</p>
                     </ItemDescription>
                 </ItemInformation>
             </div>

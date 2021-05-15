@@ -4,15 +4,13 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const ItemList = ({props}) => {
-    
     return (
         <ItemContainer>
             {
                 <Link key={props.id} 
                 to={`/item/${props.id}`}>
                     <Item 
-                    logo={props.logo}
-                    tipo={props.tipo} 
+                    logo={props.image}
                     title={props.title}             
                     />
                 </Link>

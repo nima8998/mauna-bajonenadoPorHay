@@ -18,7 +18,7 @@ export default function CartContainer() {
                         <CartDetail props={item}/>
                     )) :
 
-                        <h1> Carrito vacía ¡Revisá nuestra <Link to='/'>tienda</Link>!</h1>
+                        <h1> Carrito vacío ¡Revisá nuestra <Link to='/'>tienda</Link>!</h1>
                 }
             </CartList>
 

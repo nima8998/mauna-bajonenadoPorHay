@@ -9,7 +9,7 @@ export default function ItemCountCointainer({props, onAdd, show}) {
     return (
         <PayAdd>
             <Talle/>
-            <ItemCount stock={props.stock} onAdd={onAdd} show={show} />
+            <ItemCount stock={props} onAdd={onAdd} show={show} />
         </PayAdd>
     )
 }

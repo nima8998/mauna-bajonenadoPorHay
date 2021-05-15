@@ -17,7 +17,7 @@ const Item = (articulo) => {
                     {articulo.title}
                 </ItemTitle>
                 <ItemImage>
-                    <img src={`/img/products/${articulo.logo}`} alt={articulo.title}/>
+                    <img src={articulo.logo} alt={articulo.title}/>
                 </ItemImage>
             </ItemCard>
 

@@ -12,22 +12,17 @@ export default function CartDetail(props) {
     return (
         <Container>
             <ItemImage>
-                <img src={`./img/products/${info.logo}`} alt={info.title}/>
+                <img src={info.image} alt={info.title}/>
             </ItemImage>
 
             <ItemDetail>
-                {/* title */}
                 <h1>{info.title}</h1>
-                {/* descripcion */}
-                <p>{info.desc}</p>
+                <p>{info.description}</p>
             </ItemDetail>
 
             <ItemPrice>
-                {/* precio */}
-                <h1>$ {info.precio}</h1>
-                {/* cantidad */}
+                <h1>$ {info.price}</h1>
                 <p>Cantidad: {info.qty}</p>
-                {/* Agregar componente que levante la cantidad y poder subirla o bajarla */}
                 <Button 
                     size='small'
                     variant='contained'
@@ -36,7 +31,6 @@ export default function CartDetail(props) {
                 >
                     Eliminar
                 </Button>
-                {/* Agregar componente para eliminar producto del cart */}
             </ItemPrice>
             
         </Container>
@@ -56,13 +50,14 @@ const Container = styled.section`
 `
 
 const ItemImage = styled.article`    
-    width: 150px;
+    width: 180px;
+    height: 200px;
     display: flex;
     align-items: center;
 
     img{
         width: 100%;
-
+        height: 100%;
     }
 `
 
@@ -70,7 +65,6 @@ const ItemDetail = styled.article`
     flex: 1;
     padding: 10px;
     overflow: auto;
-    
 `
 
 const ItemPrice = styled.article`

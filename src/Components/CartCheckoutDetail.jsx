@@ -7,13 +7,14 @@ import {useCartContext} from '../Context/CartContext'
 export default function CartCheckoutDetail() {
 
     const {clearItems, total, getUnits, itemCart} = useCartContext()
+    console.log(itemCart)
 
     return (
         <Container>
                 <h2>Lista:</h2>
             <Lista>
                 {
-                    itemCart.length == 0 ? <p>Carrito vacío.</p>
+                    itemCart.length === 0 ? <p>Carrito vacío.</p>
                     :
                     itemCart.map(x=> (<li>{x.title}</li>))
                 }

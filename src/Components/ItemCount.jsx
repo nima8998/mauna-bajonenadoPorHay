@@ -12,10 +12,9 @@ export default function ItemCount({stock, onAdd, show}) {
 
 
     let sumar = () =>{
-        if (stockLocal === 0) {
+        if (stockLocal === stockCliente) {
             disabled = true
         }else{
-            setStockLocal(stockLocal -1)
             setStockCliente(stockCliente +1)
         }
     }
@@ -24,7 +23,6 @@ export default function ItemCount({stock, onAdd, show}) {
         if (stockCliente === 0) {
             disabled = true
         }else{
-            setStockLocal(stockLocal +1)
             setStockCliente(stockCliente -1)
         }
     }
@@ -36,6 +34,7 @@ export default function ItemCount({stock, onAdd, show}) {
 
     const addToCart = () =>{
         onAdd(stockCliente)
+        setStockLocal(stockLocal - stockCliente)
     }
 
 return (

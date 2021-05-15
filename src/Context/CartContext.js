@@ -31,6 +31,7 @@ export let CartProvider = ({ children }) => {
 	const addItems = (count, datos) => {
 		if (isInCart(datos.id) === false) {
 			setItemCart([...itemCart, { ...datos, qty: count }]);
+			console.log(datos);
 		} else {
 			getQuantity(datos, count);
 		}
@@ -40,7 +41,7 @@ export let CartProvider = ({ children }) => {
 	// devuelve el total del precio
 
 	const total = () => {
-		const precioTotal = itemCart.reduce((a, b) => a + b.precio * b.qty, 0);
+		const precioTotal = itemCart.reduce((a, b) => a + b.price * b.qty, 0);
 		return precioTotal;
 	};
 
