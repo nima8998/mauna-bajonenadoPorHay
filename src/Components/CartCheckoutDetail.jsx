@@ -2,12 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button'
 import {useCartContext} from '../Context/CartContext'
-
+import { GoogleLogin } from 'react-google-login';
 
 export default function CartCheckoutDetail() {
 
     const {clearItems, total, getUnits, itemCart} = useCartContext()
-    console.log(itemCart)
+
+    const responseGoogle = (response) => {
+    console.log(response.profileObj);
+    }
 
     return (
         <Container>
@@ -45,7 +48,13 @@ export default function CartCheckoutDetail() {
                     Vaciar carrito
                 </Button>
             </FinishBuy>
-            
+            <GoogleLogin
+                clientId="1007339188412-lqiv7qp0vbpkgldhkijjf8qgj2di6c9l.apps.googleusercontent.com"
+                buttonText="Login"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+            />
         </Container>
     )
 }
@@ -87,7 +96,6 @@ const Total = styled.div`
 const TotalProductos = styled.div`
     text-align: center;
     line-height: 14px;
-    margin-bottom: 100%;
 `
 
 const FinishBuy = styled.div`
