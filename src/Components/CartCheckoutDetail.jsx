@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import Button from '@material-ui/core/Button'
 import {useCartContext} from '../Context/CartContext'
 
-
 export default function CartCheckoutDetail() {
 
     const {clearItems, total, getUnits, itemCart} = useCartContext()
-    console.log(itemCart)
+
+    
 
     return (
         <Container>
@@ -16,7 +16,7 @@ export default function CartCheckoutDetail() {
                 {
                     itemCart.length === 0 ? <p>Carrito vacío.</p>
                     :
-                    itemCart.map(x=> (<li>{x.title}</li>))
+                    itemCart.map(x=> (<li key={x.id}>{x.title}</li>))
                 }
             </Lista>
 
@@ -52,7 +52,6 @@ export default function CartCheckoutDetail() {
 
 const Container = styled.section`
     height: 100%;
-    border-left: 1px solid black;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -62,7 +61,6 @@ const Container = styled.section`
 const Lista = styled.ul`
     font-size: 14px;
     padding: 0 0 2em 0;
-    border-bottom: 1px solid black;
 
     li{
         list-style-type: none;
@@ -87,7 +85,6 @@ const Total = styled.div`
 const TotalProductos = styled.div`
     text-align: center;
     line-height: 14px;
-    margin-bottom: 100%;
 `
 
 const FinishBuy = styled.div`

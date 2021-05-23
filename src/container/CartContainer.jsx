@@ -1,13 +1,16 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import CartDetail from '../Components/CartDetail'
 import CartCheckoutDetail from '../Components/CartCheckoutDetail'
-import {CartContext} from '../Context/CartContext'
+import Login from '../Components/Login'
+import {useCartContext} from '../Context/CartContext'
+import {useUserContext} from '../Context/UserContext'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 export default function CartContainer() {
 
-    let {itemCart} = useContext(CartContext)
+    const {itemCart} = useCartContext()
+    const {userLogged} = useUserContext()     
 
     return (
         <Container>
@@ -15,7 +18,7 @@ export default function CartContainer() {
             <CartList>
                 {
                     itemCart.length > 0 ? itemCart.map(item=> (
-                        <CartDetail props={item}/>
+                        <CartDetail key={item.id} props={item}/>
                     )) :
 
                         <h1> Carrito vacío ¡Revisá nuestra <Link to='/'>tienda</Link>!</h1>
@@ -23,7 +26,9 @@ export default function CartContainer() {
             </CartList>
 
             <CartCheckout>
-                <CartCheckoutDetail />
+                {
+                    userLogged === undefined ? <Login message='Logueate para finalizar tu compra'/> : <CartCheckoutDetail/>
+                }
             </CartCheckout>
 
         </Container>
@@ -32,10 +37,9 @@ export default function CartContainer() {
 }
 
 const Container = styled.article`
-    height: calc(100vh - 400px);
+    height: 100%;
     display: flex;
     margin: auto;
-    column-gap: 15px;
     max-width: 1600px;
 `
 
@@ -44,6 +48,7 @@ const CartList = styled.section`
     overflow-y: auto;
     overflow-x: hidden;
     text-align: center;
+
     a{
         color: #f50057;
         text-decoration: none;
@@ -52,4 +57,7 @@ const CartList = styled.section`
 
 const CartCheckout = styled.section`
     width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `

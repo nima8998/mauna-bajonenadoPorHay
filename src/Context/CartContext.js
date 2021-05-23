@@ -31,7 +31,6 @@ export let CartProvider = ({ children }) => {
 	const addItems = (count, datos) => {
 		if (isInCart(datos.id) === false) {
 			setItemCart([...itemCart, { ...datos, qty: count }]);
-			console.log(datos);
 		} else {
 			getQuantity(datos, count);
 		}
