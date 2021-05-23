@@ -2,15 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button'
 import {useCartContext} from '../Context/CartContext'
-import { GoogleLogin } from 'react-google-login';
 
 export default function CartCheckoutDetail() {
 
     const {clearItems, total, getUnits, itemCart} = useCartContext()
 
-    const responseGoogle = (response) => {
-    console.log(response.profileObj);
-    }
+    
 
     return (
         <Container>
@@ -19,7 +16,7 @@ export default function CartCheckoutDetail() {
                 {
                     itemCart.length === 0 ? <p>Carrito vacío.</p>
                     :
-                    itemCart.map(x=> (<li>{x.title}</li>))
+                    itemCart.map(x=> (<li key={x.id}>{x.title}</li>))
                 }
             </Lista>
 
@@ -48,20 +45,13 @@ export default function CartCheckoutDetail() {
                     Vaciar carrito
                 </Button>
             </FinishBuy>
-            <GoogleLogin
-                clientId="1007339188412-lqiv7qp0vbpkgldhkijjf8qgj2di6c9l.apps.googleusercontent.com"
-                buttonText="Login"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                cookiePolicy={'single_host_origin'}
-            />
+            
         </Container>
     )
 }
 
 const Container = styled.section`
     height: 100%;
-    border-left: 1px solid black;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -71,7 +61,6 @@ const Container = styled.section`
 const Lista = styled.ul`
     font-size: 14px;
     padding: 0 0 2em 0;
-    border-bottom: 1px solid black;
 
     li{
         list-style-type: none;

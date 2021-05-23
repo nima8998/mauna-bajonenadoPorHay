@@ -14,12 +14,7 @@ let ItemListContainer = () =>{
         const db = getFirestore();
         const itemsCollection = db.collection('items')
         itemsCollection.get()
-        .then((querySnapShot)=>{
-            querySnapShot.size === 0 ? 
-                console.log('error en firebase')
-            :
-                console.log('firebase ok')
-            
+        .then((querySnapShot)=>{ 
             const documentos = querySnapShot.docs.map((doc)=>{
                 return{
                     id: doc.id,

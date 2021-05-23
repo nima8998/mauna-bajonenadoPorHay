@@ -11,19 +11,19 @@ import { getFirestore } from '../firebase'
 export default function ItemDetailContainer() {
 
     let [item, setItem] = useState([]);
-    let { paramId } = useParams()
+    let {paramId} = useParams()
     let {addItems} = useCartContext()
     let [show, setShow] = useState(false)
-
+    
     useEffect(() => {
         const db = getFirestore();
         const getItem = db.collection('items')
         getItem.get()
         .then(dato =>{
-            const filter = dato.docs.find(x => x.id === `${paramId}`)
+            const filter = dato.docs.find(x => x.id === paramId)
             setItem(filter.data())
         })
-        },[]);
+        },[paramId]);
 
         // function para agregar el item
         const onAdd = count =>{
