@@ -1,24 +1,36 @@
-# e-Commerce con ReactJS
+# eCommerce con ReactJS para Coderhouse. Proyecto final
 
-Entrega intermedia del proyecto final de React para CoderHouse.
+En este repo podrán encontrar un eCommerce con las funciones más comunes. Ver un listado de productos, filtrar por categorías, agregar al carrito y hacer un login con su cuenta de Google, entre otras.
+**Los productos utilizados son propiedad de [King of the Kongo](https://www.kingofthekongo.com.ar/)**
 
-Lenguajes utilizados:
+## Aclaraciones
 
-<li>ReactJS</li>
-<li>JavaScript</li>
-<li>JSX</li>
-<li>HTML5</li>
-<li>CSS3</li>
+Como se aclara en el titulo, el mismo es un proyecto final para un curso de Coderhouse. Por ende, datos como los del login solo serán almacenados en localStorage y estados locales. Las "compras", serán almacenadas en firestore con el único fin de darle funcionalidad al mismo.
 
-Dependencias utilizadas:
+## Tecnologías, dependencias y librarías utilizadas:
 
-<li>@Material-UI /core /icons /lab</li>
-<li>react-router-dom</li>
+- ReactJS
+- HTML5 y CSS3
+- @Material-UI /core /icons
+- Firebase
+- React-router-dom
+- React-google-login
 
-Version de React 17.0.2
+## Hooks:
 
-<img src='./src/img/gif_eCommerce.gif'/>
+- Context
+- useEffect
+- useState
+- useParams
 
-# Deploy the baby
+# Deploy
 
-<code>npm start</code>
+Para poder ver en funcionamiento el eCommerce, usarás estos comandos:
+
+    git clone https://github.com/nima8998/mauna-eCommerceReact.git
+    cd mauna-ecommerceReact
+    npm install node-modules
+    npm install react-google-login
+    npm start
+
+# Demo eCommerce:
