@@ -4,17 +4,16 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import ItemCountContainer from './ItemCountCointainer'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
-
 import {useCartContext} from '../Context/CartContext'
 import { getFirestore } from '../firebase'
 
 export default function ItemDetailContainer() {
 
-    let [item, setItem] = useState([]);
-    let {paramId} = useParams()
-    let {addItems} = useCartContext()
-    let [show, setShow] = useState(false)
-    
+    const [item, setItem] = useState([]);
+    const {paramId} = useParams();
+    const {addItems} = useCartContext();
+    const [show, setShow] = useState(false);
+
     useEffect(() => {
         const db = getFirestore();
         const getItem = db.collection('items')
@@ -30,8 +29,6 @@ export default function ItemDetailContainer() {
             addItems(count, item)
             setShow(true)
         }
-        
-        // setea el estado en true si el item filtrado esta en el car
 
     return (
         <ItemDetalContainer>
@@ -45,7 +42,7 @@ export default function ItemDetailContainer() {
             {
                 item.length === 0 ?
                 null :
-                <ItemCountContainer props={item.stock} onAdd={onAdd} show={show}/> 
+                <ItemCountContainer props={item} onAdd={onAdd} show={show} /> 
             }
         </ItemDetalContainer>
     )

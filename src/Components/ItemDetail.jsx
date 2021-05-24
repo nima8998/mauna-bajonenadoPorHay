@@ -30,7 +30,7 @@ const Detail = styled.div`
     column-gap: 5rem;
     border-radius: 10px;
     padding: 1rem;
-    box-shadow: 5px 5px 15px #e4e4e4;
+    box-shadow: 5px 5px 15px #cfcfcf;
     margin: 3rem;
     background-color: white;
     

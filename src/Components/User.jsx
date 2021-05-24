@@ -2,13 +2,21 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import {useUserContext} from '../Context/UserContext'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 export default function User() {
     const {userThumbnail, userLogged, logOut} = useUserContext();
     
     return (
         <Thumbnail>
-            <span>{userLogged}</span>
+            <Link to='/profile'>
+                <Button
+                    color='primary'
+                    variant='contained'
+                >
+                    {userLogged}
+                </Button>
+            </Link>
             <img src={userThumbnail} alt="user google logo" />
             <Button
                 variant='contained'
@@ -16,7 +24,9 @@ export default function User() {
                 size='small'
                 onClick={logOut}
             >
-                Logout
+                <Link to='/'>
+                    Logout
+                </Link>
             </Button>
         </Thumbnail>
     )
@@ -31,5 +41,19 @@ const Thumbnail = styled.div`
     img{
         width: 50px;
         border-radius: 50%;
+
     }
+
+    Button{
+        padding: .4em .8em;
+        font-size: 12px;
+    }
+
+    a{
+        color: #fff;
+        &:visited{
+            color: #fff;
+        }
+    }    
+
 `
