@@ -17,7 +17,7 @@ export default function ItemFavDetail(props) {
                 <h1>{info.title}</h1>
                 <p>{info.description}</p>
             </ContainerDetail>
-            <ContainerButtons>
+            <div>
                 <Button
                     variant='outlined'
                     color='secondary'
@@ -25,7 +25,7 @@ export default function ItemFavDetail(props) {
                 >
                     Quitar
                 </Button>
-            </ContainerButtons>
+            </div>
         </Container>
     )
 }
@@ -36,7 +36,7 @@ const Container = styled.section`
     align-items: center;
     box-shadow: 5px 5px 15px #cfcfcf;
     border-radius: 5px;
-    height: 100px;
+    height: 100%;
     margin: 1em 0;
 `
 const ContainerImage = styled.div`
@@ -49,8 +49,3 @@ const ContainerDetail = styled.div`
     height: 100%;
     width: 50%;
 `
-
-const ContainerButtons = styled.div`
-
-`
-

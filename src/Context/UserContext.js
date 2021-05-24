@@ -35,6 +35,7 @@ export let UserProvider = ({ children }) => {
 		setUserLogged();
 		setUserThumbnail();
 		setUserEmail();
+		setFavItem([]);
 	};
 
 	// favoritos

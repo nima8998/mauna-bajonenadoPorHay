@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import {useUserContext} from '../Context/UserContext'
+import {Link} from 'react-router-dom'
+import Button from '@material-ui/core/Button'
 
 export default function Favorite({props}) {
 
@@ -21,7 +23,7 @@ export default function Favorite({props}) {
                             onClick={()=>addFav(props)}
                         />
                     </div>
-                    :
+                        :
                     <div>
                         <span>Quitar de favoritos</span>
                         <FavoriteIcon
@@ -32,6 +34,14 @@ export default function Favorite({props}) {
                         />
                     </div>
             }
+            <Button
+                variant='contained'
+                color='secondary'
+            >
+                <Link to='/profile'>
+                    Ver favoritos
+                </Link>
+            </Button>
             
         </Container>
     )
@@ -50,5 +60,16 @@ const Container = styled.section`
     .favoriteIcon{
         cursor: pointer;
         align-self: flex-start;
+    }
+
+    a{
+        color: #fff;
+        text-decoration: none;
+        &:visited{
+            color: #fff;
+        }
+    }
+    Button{
+        margin-top: 1em;
     }
 `

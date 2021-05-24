@@ -3,14 +3,20 @@ import ItemCount from '../Components/ItemCount'
 import Talle from '../Components/Talle'
 import styled from 'styled-components'
 import Favorite from '../Components/Favorite'
+import {useUserContext} from '../Context/UserContext'
 
 export default function ItemCountCointainer({props, onAdd, show, showFav}) {
+
+    const {userLogged} = useUserContext();
 
     return (
         <PayAdd>
             <Talle/>
             <ItemCount stock={props.stock} onAdd={onAdd} show={show}  />
-            <Favorite props={props} showFav={showFav}/>
+            {
+                userLogged !== undefined && <Favorite props={props} showFav={showFav}/>
+            }
+
         </PayAdd>
     )
 }
