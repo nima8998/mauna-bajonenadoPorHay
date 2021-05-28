@@ -4,7 +4,6 @@ import {useUserContext} from '../Context/UserContext'
 import Button from '@material-ui/core/Button'
 
 export default function ItemFavDetail(props) {
-
     const info = props.props;
     const {removeFav} = useUserContext();
 

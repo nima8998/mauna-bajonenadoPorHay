@@ -1,11 +1,38 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import ItemFavDetail from '../Components/ItemFavDetail'
 import {useUserContext} from '../Context/UserContext'
 import {Link} from 'react-router-dom'
+import {getFirestore} from '../firebase'
+import OrderListDetail from '../Components/OrderListDetail'
+import CircularProgrss from '@material-ui/core/CircularProgress'
 
 export default function UserProfile() {
+    
     const {favItem} = useUserContext();
+    const [orders, setOrders] = useState([])
+    const [loading, setLoading] = useState(true)
+    
+    
+    useEffect(() => {
+        const db = getFirestore()
+        const dataCollection = db.collection('orders')
+            dataCollection.get()
+            .then((querySnapshot)=>{
+                    const docs = querySnapshot.docs.map(doc =>{
+                        return{
+                            id: doc.id,
+                            ...doc.data()
+                        }}
+                    )
+                    const docsFiltered = docs.filter(doc => doc.buyer.email === localStorage.getItem('user_email'))
+                    setOrders(docsFiltered)
+                    setLoading(false)
+                })
+                .catch((err)=>{
+                    console.log(err)
+                })
+        }, [])
 
     return (
         <Container>
@@ -22,7 +49,11 @@ export default function UserProfile() {
                 }
             </FavItems>
             <BuyList>
-                <h1>compras hechas</h1>
+                {
+                    loading === true ? <CircularProgrss className='loader' color='secondary'/>
+                    : orders.length > 0 ? orders.map((orders, i) => <OrderListDetail key={i} props={orders}/>)
+                    : <h1>¡Aún no hiciste compras! 😢</h1>
+                }
             </BuyList>
         </Container>
     )
@@ -55,7 +86,16 @@ const FavItems = styled.div`
 `
 
 const BuyList = styled.div`
-    background-color: #ff020281;
-    height: 100px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    row-gap: 1em;
+    *{
+        width: 100%;
+    }
+    .loader{
+        margin: auto;
+    }
 `

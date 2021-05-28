@@ -30,7 +30,7 @@ export default function CartContainer() {
     const buy = () =>{
         let order = {
             buyer: {
-                name: userLogged,
+                name: localStorage.getItem('user_name'),
                 email: localStorage.getItem('user_email')
             },
             items: itemCart,
