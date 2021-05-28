@@ -27,7 +27,6 @@ export default function ItemCount({stock, onAdd, show}) {
         }
     }
 
-    // deshabilitar boton de agregar 
     if (stockCliente === 0) {
         disabledBuy = true
     }

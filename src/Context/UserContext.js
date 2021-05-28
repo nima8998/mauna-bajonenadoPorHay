@@ -27,7 +27,7 @@ export let UserProvider = ({ children }) => {
 		localStorage.setItem("user_thumbnail", `${infoLog.imageUrl}`);
 
 		setUserEmail(infoLog.email);
-		localStorage.setItem("user_emial", `${infoLog.email}`);
+		localStorage.setItem("user_email", `${infoLog.email}`);
 	};
 
 	const logOut = () => {

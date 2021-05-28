@@ -2,12 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button'
 import {useCartContext} from '../Context/CartContext'
+import {Link} from 'react-router-dom'
 
-export default function CartCheckoutDetail() {
+export default function CartCheckoutDetail({handlerBuy, newBuy, show}) {
 
     const {clearItems, total, getUnits, itemCart} = useCartContext()
-
-    
 
     return (
         <Container>
@@ -30,20 +29,46 @@ export default function CartCheckoutDetail() {
             </Total>
 
             <FinishBuy>
-                <Button
-                    variant='contained'
-                    color='primary'
 
-                >
-                    Pagar
-                </Button>
-                <Button
-                    variant='contained'
-                    color='secondary'
-                    onClick={() => clearItems()}
-                >
-                    Vaciar carrito
-                </Button>
+                {
+                    newBuy <= 0
+                        ? 
+                    <div>
+                        <Button
+                            variant='contained'
+                            color='primary'
+                            onClick={()=>handlerBuy()}
+                            disabled={show}
+                        >
+                            Terminar compra
+                        </Button>
+                        <Button
+                            variant='contained'
+                            color='secondary'
+                            onClick={() => clearItems()}
+                            disabled={show}
+                        >
+                            Vaciar carrito
+                        </Button>
+                    </div>
+                        :
+                    <div className="idCompra">
+                        <b>¡Compra efectuada! El ID de tu compra es:</b>
+                        <p>{newBuy.id}</p>
+                        
+                        <Link
+                            to='/profile'
+                        >
+                            <Button
+                                variant='contained'
+                                color='secondary'
+                            >
+                                    Ver tus compras
+                            </Button>
+                        </Link>
+                    </div>
+                }
+                
             </FinishBuy>
             
         </Container>
@@ -97,5 +122,18 @@ const FinishBuy = styled.div`
 
     Button{
         width: 100%;
+        margin: .5em 0;
+    }
+
+    .idCompra{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
     }
 `

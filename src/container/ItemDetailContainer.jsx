@@ -24,7 +24,6 @@ export default function ItemDetailContainer() {
         })
         },[paramId]);
 
-        // function para agregar el item
         const onAdd = count =>{
             addItems(count, item)
             setShow(true)
@@ -32,13 +31,11 @@ export default function ItemDetailContainer() {
 
     return (
         <ItemDetalContainer>
-            {/* info del producto */}
             {
                 item.length === 0 ? 
                 <CircularProgress color='secondary'/> :
                 <ItemDetail props={item}/> 
             }
-            {/* componente para agregar cantidad y agregar al carrito */}
             {
                 item.length === 0 ?
                 null :
