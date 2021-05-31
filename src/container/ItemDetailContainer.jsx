@@ -24,11 +24,10 @@ export default function ItemDetailContainer() {
         })
         },[paramId]);
 
-        const onAdd = count =>{
-            addItems(count, item)
+        const onAdd = (count, talle) =>{
+            addItems(count, item, talle)
             setShow(true)
         }
-
     return (
         <ItemDetalContainer>
             {

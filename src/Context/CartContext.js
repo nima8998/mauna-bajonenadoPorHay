@@ -28,9 +28,9 @@ export let CartProvider = ({ children }) => {
 	};
 
 	// agrega item al estado
-	const addItems = (count, datos) => {
+	const addItems = (count, datos, talle) => {
 		if (isInCart(datos.id) === false) {
-			setItemCart([...itemCart, { ...datos, qty: count }]);
+			setItemCart([...itemCart, { ...datos, qty: count, tal: talle }]);
 		} else {
 			getQuantity(datos, count);
 		}

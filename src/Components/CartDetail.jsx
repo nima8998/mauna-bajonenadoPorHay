@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button'
 import {useCartContext} from '../Context/CartContext'
 
 export default function CartDetail(props) {
-    // maldito nesting
     let info = props.props;
     let {removeItems} = useCartContext()
 
@@ -23,6 +22,7 @@ export default function CartDetail(props) {
             <ItemPrice>
                 <h1>$ {info.price}</h1>
                 <p>Cantidad: {info.qty}</p>
+                <span className='talle'>{info.tal}</span>
                 <Button 
                     size='small'
                     variant='contained'
@@ -38,7 +38,6 @@ export default function CartDetail(props) {
 }
 
 const Container = styled.section`
-    height: 200px;
     width: calc(100% - 2em);
     border-right: 3px solid #3f51b5;
     border-top-right-radius: 15px;
@@ -76,5 +75,10 @@ const ItemPrice = styled.article`
 
     h1{
         font-size: 18px;
+    }
+
+    .talle{
+        color: #f50057;
+        font-weight: bold;
     }
 `

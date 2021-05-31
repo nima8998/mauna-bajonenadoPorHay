@@ -17,17 +17,17 @@ export default function UserProfile() {
     useEffect(() => {
         const db = getFirestore()
         const dataCollection = db.collection('orders')
-            dataCollection.get()
-            .then((querySnapshot)=>{
-                    const docs = querySnapshot.docs.map(doc =>{
-                        return{
-                            id: doc.id,
-                            ...doc.data()
-                        }}
-                    )
-                    const docsFiltered = docs.filter(doc => doc.buyer.email === localStorage.getItem('user_email'))
-                    setOrders(docsFiltered)
-                    setLoading(false)
+        dataCollection.get()
+        .then((querySnapshot)=>{
+            const docs = querySnapshot.docs.map(doc =>{
+                return{
+                    id: doc.id,
+                    ...doc.data()
+                }}
+                )
+                const docsFiltered = docs.filter(doc => doc.buyer.email === localStorage.getItem('user_email'))
+                setOrders(docsFiltered)
+                setLoading(false)
                 })
                 .catch((err)=>{
                     console.log(err)

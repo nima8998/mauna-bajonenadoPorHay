@@ -11,7 +11,7 @@ export default function Login({message}) {
         <Container>
             <span>{message}</span>
             <GoogleLogin
-                    clientId="1007339188412-lqiv7qp0vbpkgldhkijjf8qgj2di6c9l.apps.googleusercontent.com"
+                    clientId='1007339188412-lqiv7qp0vbpkgldhkijjf8qgj2di6c9l.apps.googleusercontent.com'
                     buttonText="Login"
                     onSuccess={responseGoogle}
                     onFailure={responseGoogle}

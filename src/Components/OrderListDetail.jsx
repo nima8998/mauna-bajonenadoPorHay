@@ -15,7 +15,7 @@ export default function OrderListDetail({props}) {
                         props.items.map(x=>{
                             return(
                                 <div key={x.id}>
-                                    <p>Cantidad {x.qty}</p>
+                                    <p>Cant.: {x.qty}</p>
                                     <img src={x.image} alt={x.title} />
                                 </div>
                             )

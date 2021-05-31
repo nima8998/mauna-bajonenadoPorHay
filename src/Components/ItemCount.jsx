@@ -1,40 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Button from '@material-ui/core/Button'
 import AddCart from '@material-ui/icons/AddShoppingCartOutlined'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export default function ItemCount({stock, onAdd, show}) {
-    let disabled = false
-    let disabledBuy = false
-    let [stockLocal, setStockLocal] = useState(stock)
-    let [stockCliente, setStockCliente] = useState (0)
+export default function ItemCount({sumar,
+restar,
+addToCart,
+show,
+stockLocal,
+stockCliente,
+disabled,
+disabledBuy}) {
 
-
-    let sumar = () =>{
-        if (stockLocal === stockCliente) {
-            disabled = true
-        }else{
-            setStockCliente(stockCliente +1)
-        }
-    }
-
-    let restar = () =>{
-        if (stockCliente === 0) {
-            disabled = true
-        }else{
-            setStockCliente(stockCliente -1)
-        }
-    }
-
-    if (stockCliente === 0) {
-        disabledBuy = true
-    }
-
-    const addToCart = () =>{
-        onAdd(stockCliente)
-        setStockLocal(stockLocal - stockCliente)
-    }
 
 return (
         <Count>
@@ -64,7 +42,6 @@ return (
                 </Button>
 
             </Stock>
-            {/* renderizacion condicional para agregar al carrito o terminar la compra */}
             {
                 show === false ? 
                 <Button 
