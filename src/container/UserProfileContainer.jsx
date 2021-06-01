@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
+import {device} from '../css/MediaQueries'
 import ItemFavDetail from '../Components/ItemFavDetail'
 import {useUserContext} from '../Context/UserContext'
 import {Link} from 'react-router-dom'
@@ -42,7 +43,7 @@ export default function UserProfile() {
                     favItem <= 0 ? 
                     <h1>
                         ¿No tenes ningún producto favorito? Revisá nuestra
-                        <Link to='/'> tienda</Link> 💕
+                        <Link to='/' replace> tienda</Link> 💕
                     </h1>
                     :
                     favItem.map((favs, i) => <ItemFavDetail key={i} props={favs}/>)
@@ -59,23 +60,32 @@ export default function UserProfile() {
     )
 }
 
-const Container = styled.section`
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/ecommerce-mauna.appspot.com/o/flat0.png?alt=media&token=82c9566f-fce5-4377-ba37-70da773be4eb');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-position-y: bottom;
+const Container = styled.div`
     min-height: 600px;
-    width: 85%;
+    width: 90vw;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     column-gap: 1em;
+    row-gap: 3em;
     margin: auto;
-
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/ecommerce-mauna.appspot.com/o/flat0.png?alt=media&token=82c9566f-fce5-4377-ba37-70da773be4eb');
+    background-size: 35vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    
     a{
         color: #f50057;
         text-decoration: none;
+    }
+    
+    @media ${device.mobile}{
+        flex-direction: column;
+        width: 100vw;
+    }
+    @media ${device.tablet}{
+        flex-direction: column;
+        width: 100vw;
     }
 `
 

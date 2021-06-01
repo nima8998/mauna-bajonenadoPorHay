@@ -22,7 +22,7 @@ export default function ItemFavDetail(props) {
                     color='secondary'
                     onClick={()=>removeFav(info.id)}
                 >
-                    Quitar
+                    Eliminar fav
                 </Button>
             </div>
         </Container>
@@ -33,6 +33,7 @@ const Container = styled.section`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: #ffffffbe;
     box-shadow: 5px 5px 15px #cfcfcf;
     border-radius: 5px;
     height: 100%;

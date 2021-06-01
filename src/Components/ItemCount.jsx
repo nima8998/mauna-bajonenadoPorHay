@@ -10,9 +10,9 @@ addToCart,
 show,
 stockLocal,
 stockCliente,
-disabled,
-disabledBuy}) {
-
+disabledBtn,
+disabledBuy,
+inCart}) {
 
 return (
         <Count>
@@ -24,7 +24,7 @@ return (
                     color='secondary'
                     size='small'
                     onClick={restar}
-                    disabled={disabled}
+                    disabled={disabledBtn}
                 >
                     -
                 </Button>
@@ -36,7 +36,7 @@ return (
                     color='primary'
                     size='small'
                     onClick={sumar}
-                    disabled={disabled}
+                    disabled={disabledBtn}
                 >
                     +
                 </Button>

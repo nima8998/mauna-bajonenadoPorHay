@@ -1,7 +1,8 @@
 import React from 'react'
 import Button from '@material-ui/core/Button'
-import {useUserContext} from '../Context/UserContext'
 import styled from 'styled-components'
+import { device } from '../css/MediaQueries'
+import {useUserContext} from '../Context/UserContext'
 import {Link} from 'react-router-dom'
 
 export default function User() {
@@ -9,7 +10,7 @@ export default function User() {
     
     return (
         <Thumbnail>
-            <Link to='/profile'>
+            <Link to='/profile' replace>
                 <Button
                     color='primary'
                     variant='contained'
@@ -54,6 +55,13 @@ const Thumbnail = styled.div`
         &:visited{
             color: #fff;
         }
-    }    
+    }
+
+    @media ${device.mobile}{
+        flex-direction: column;
+        row-gap: 1em;
+        margin-top: .5em;
+        padding: 0;
+    }
 
 `

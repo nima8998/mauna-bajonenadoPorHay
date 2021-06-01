@@ -12,7 +12,7 @@ import {useUserContext} from '../Context/UserContext'
 export default function ItemCountCointainer({props, onAdd, show, showFav}) {
 
     const {userLogged} = useUserContext();
-    let disabled = false
+    let disabledBtn = false
     let disabledBuy = false
     let [stockLocal, setStockLocal] = useState(props.stock)
     let [stockCliente, setStockCliente] = useState (0)
@@ -21,7 +21,7 @@ export default function ItemCountCointainer({props, onAdd, show, showFav}) {
 
     let sumar = () =>{
         if (stockLocal === stockCliente) {
-            disabled = true
+            disabledBtn = true
         }else{
             setStockCliente(stockCliente +1)
         }
@@ -29,13 +29,13 @@ export default function ItemCountCointainer({props, onAdd, show, showFav}) {
 
     let restar = () =>{
         if (stockCliente === 0) {
-            disabled = true
+            disabledBtn = true
         }else{
             setStockCliente(stockCliente -1)
         }
     }
 
-    if (stockCliente === 0) {
+    if (stockCliente === 0 || talle === undefined) {
         disabledBuy = true
     }
 
@@ -50,7 +50,7 @@ export default function ItemCountCointainer({props, onAdd, show, showFav}) {
 
 
     return (
-        <PayAdd>
+        <PayAdd className='col-sm-12 col-md-auto'>
             <TalleContainer>
                 <FormControl>
                     <FormLabel>Talle</FormLabel>
@@ -70,23 +70,22 @@ export default function ItemCountCointainer({props, onAdd, show, showFav}) {
                 addToCart={addToCart}
                 stockLocal={stockLocal}
                 stockCliente={stockCliente}
-                disabled={disabled}
+                disabledBtn={disabledBtn}
                 disabledBuy={disabledBuy}
             />
             {
                 userLogged !== undefined && <Favorite props={props} showFav={showFav}/>
             }
-
         </PayAdd>
     )
 }
 
 const PayAdd = styled.div`
     background-color: #fff;
-    padding: 2em;
+    padding: 1em;
     border-radius: 10px;
     text-align: center;
-    margin: 10em 0;
+    margin: 2em;
     height: 100%;
     box-shadow: 5px 5px 15px #e4e4e4;
 `

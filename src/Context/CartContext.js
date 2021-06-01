@@ -7,7 +7,6 @@ export let CartProvider = ({ children }) => {
 	let [itemCart, setItemCart] = useState([]);
 
 	// FUNCTIONS Y CHECKEOS PARA EL CARRITO
-	// checkeo si item ya figura en el estado
 	const isInCart = (id) => {
 		const enElCart = itemCart.find((x) => x.id === id);
 		if (enElCart !== undefined) {
@@ -16,7 +15,6 @@ export let CartProvider = ({ children }) => {
 		return false;
 	};
 
-	// si ya figura en el estado, itera para solo sumar la cantidad
 	const getQuantity = (datos, count) => {
 		const filtro = [...itemCart];
 		filtro.forEach((i) => {
@@ -27,7 +25,6 @@ export let CartProvider = ({ children }) => {
 		setItemCart(filtro);
 	};
 
-	// agrega item al estado
 	const addItems = (count, datos, talle) => {
 		if (isInCart(datos.id) === false) {
 			setItemCart([...itemCart, { ...datos, qty: count, tal: talle }]);
@@ -37,26 +34,22 @@ export let CartProvider = ({ children }) => {
 	};
 
 	// FUNCTION PARA INTERACTUAR EN /CHECKOUT
-	// devuelve el total del precio
 
 	const total = () => {
 		const precioTotal = itemCart.reduce((a, b) => a + b.price * b.qty, 0);
 		return precioTotal;
 	};
 
-	// suma cantidades para mostrar el total de items en el estado
 	const getUnits = () => {
 		const unid = itemCart.reduce((a, b) => a + b.qty, 0);
 		return unid;
 	};
 
-	// sacar item
 	const removeItems = (item) => {
 		const newItems = itemCart.filter((x) => x.id !== item);
 		setItemCart(newItems);
 	};
 
-	// vacia el estado
 	const clearItems = () => setItemCart([]);
 
 	return (
@@ -69,6 +62,7 @@ export let CartProvider = ({ children }) => {
 				getUnits,
 				itemCart,
 				setItemCart,
+				isInCart,
 			}}
 		>
 			{children}

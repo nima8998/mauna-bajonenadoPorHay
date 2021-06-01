@@ -26,11 +26,6 @@ export default function OrderListDetail({props}) {
                     <p className='total'>Total</p>
                     <b>${props.total}</b>
                 </ContainerPrice>
-                <ContainerDate>
-                    {
-                        // props.items.tdate.map(x=> x.toDate())
-                    }
-                </ContainerDate>
             </ContainerDetail>
         </Container>
     )
@@ -77,8 +72,4 @@ const ContainerDetail = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-`
-
-const ContainerDate = styled.div`
-
 `

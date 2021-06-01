@@ -5,6 +5,7 @@ import Login from '../Components/Login'
 import {useCartContext} from '../Context/CartContext'
 import {useUserContext} from '../Context/UserContext'
 import {Link} from 'react-router-dom'
+import {device} from '../css/MediaQueries'
 import styled from 'styled-components'
 import { getFirestore } from '../firebase'
 import firebase from 'firebase/app'
@@ -13,7 +14,6 @@ export default function CartContainer() {
 
     const db = getFirestore()
     const orders = db.collection('orders')
-
     const {clearItems, itemCart, total} = useCartContext()
     const {userLogged} = useUserContext()
     const [newBuy, setnewBuy] = useState([])
@@ -37,19 +37,17 @@ export default function CartContainer() {
             tdate: firebase.firestore.Timestamp.fromDate(new Date()),
             total: total()
         }
-    
-        if (itemCart.length) {
-            orders.add(order)
-                .then((id)=>{
-                    setnewBuy(id)
-                    clearItems()
-                })
-                .catch((err)=>{
-                    console.log('Error en la compra: ', err)
-                }) 
-        }else{
-            console.log('carrito vacio')
-        }
+
+        itemCart.length &&
+        orders.add(order)
+            .then((id)=>{
+                setnewBuy(id)
+                clearItems()
+            })
+            .catch((err)=>{
+                console.log('Error en la compra: ', err)
+            }) 
+
     }
 
     
@@ -81,7 +79,31 @@ const Container = styled.article`
     height: 100%;
     display: flex;
     margin: auto;
-    max-width: 1600px;
+    width: 75vw;
+    @media ${device.mobile}{
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 5em;
+        }
+    }
+    @media ${device.tablet}{
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 15em;
+        }
+    }
+    @media ${device.desktop}{
+        img{
+            width: 20em;
+        }
+    }
 `
 
 const CartList = styled.section`
@@ -97,7 +119,6 @@ const CartList = styled.section`
 `
 
 const CartCheckout = styled.section`
-    width: 550px;
     display: flex;
     justify-content: center;
     align-items: center;

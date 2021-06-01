@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button'
-
+import {device} from '../css/MediaQueries'
 import {useCartContext} from '../Context/CartContext'
 
 export default function CartDetail(props) {
@@ -46,6 +46,14 @@ const Container = styled.section`
     margin-bottom: 2em;
     display: flex;
     box-shadow: 5px 5px 10px #c8c8c8;
+
+    @media ${device.mobile}{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 95vw;
+        margin: 1em auto;
+    }
 `
 
 const ItemImage = styled.article`    
@@ -55,15 +63,17 @@ const ItemImage = styled.article`
     align-items: center;
 
     img{
-        width: 100%;
+        width: fit-content;
         height: 100%;
+    }
+    
+    @media ${device.mobile}{
+        justify-content: center;
     }
 `
 
 const ItemDetail = styled.article`
-    flex: 1;
     padding: 10px;
-    overflow: auto;
 `
 
 const ItemPrice = styled.article`
@@ -74,7 +84,8 @@ const ItemPrice = styled.article`
     flex-direction: column;
 
     h1{
-        font-size: 18px;
+        font-size: 22px;
+        color: #3f51b5;
     }
 
     .talle{

@@ -22,14 +22,15 @@ export default function ItemDetailContainer() {
             const filter = dato.docs.find(x => x.id === paramId)
             setItem(filter.data())
         })
-        },[paramId]);
+    },[paramId]);
+    
+    const onAdd = (count, talle) =>{
+        addItems(count, item, talle)
+        setShow(true)
+    }
 
-        const onAdd = (count, talle) =>{
-            addItems(count, item, talle)
-            setShow(true)
-        }
     return (
-        <ItemDetalContainer>
+        <ItemDetalContainer className='row'>
             {
                 item.length === 0 ? 
                 <CircularProgress color='secondary'/> :
@@ -38,7 +39,7 @@ export default function ItemDetailContainer() {
             {
                 item.length === 0 ?
                 null :
-                <ItemCountContainer props={item} onAdd={onAdd} show={show} /> 
+                <ItemCountContainer props={item} onAdd={onAdd} show={show}/> 
             }
         </ItemDetalContainer>
     )
@@ -47,7 +48,7 @@ export default function ItemDetailContainer() {
 
     const ItemDetalContainer = styled.div`
         height: 100%;
-        width: 100%;
+        width: 75vw;
         display: flex;
         justify-content: center;
         align-self: center;

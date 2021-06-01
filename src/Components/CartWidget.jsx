@@ -3,6 +3,7 @@ import Cart from '@material-ui/icons/ShoppingCartOutlined'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../Context/CartContext'
+import { device } from '../css/MediaQueries'
 
 export default function CartWidget() {
 
@@ -25,6 +26,10 @@ export default function CartWidget() {
 
 const CartIcon = styled.div`
     margin-left: 35px;
+    
+    @media ${device.mobile}{
+        margin: 0;
+    }
 `
 
 const CartCount = styled.span`

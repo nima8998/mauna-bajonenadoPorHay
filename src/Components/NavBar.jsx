@@ -1,11 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
+import {device} from '../css/MediaQueries'
 import CartWidget from './CartWidget.jsx' 
 import ToggleMenu from './ToggleMenu.jsx'
 import Button from '@material-ui/core/Button'
 import Login from './Login'
 import User from './User.jsx'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
 import {useUserContext} from '../Context/UserContext'
 
 export default function Navbar() {
@@ -23,7 +24,7 @@ export default function Navbar() {
     )
 }
 
-const NavBar = styled.ul`
+const NavBar = styled.div`
     list-style-type: none;
     display: flex;
     align-items: center;
@@ -31,12 +32,14 @@ const NavBar = styled.ul`
     max-width: 45vw;
     margin: 2em auto 4em;
 
-    li{
-        margin: 0 30px;
-    }
-
     a, &:visited{
         color: #000;
         text-decoration: none;
+    }
+
+    @media ${device.mobile}{
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto 5em;
     }
 `

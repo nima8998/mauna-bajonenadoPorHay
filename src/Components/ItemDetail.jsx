@@ -4,20 +4,18 @@ import styled from 'styled-components'
 export default function ItemDetail({props}) {
     return (
 
-        <Detail>
-            <div className="ItemDetail__image">
-                <ItemInformation>
-                    <h1>{props.title}</h1>
-                    <h2>$ {props.price}</h2>
-                
-                    <img src={props.image} alt="imageProduct"/>
+        <Detail className="ItemDetail__image col-sm-12 col-md-auto">
+            <ItemInformation>
+                <h1>{props.title}</h1>
+                <h2>$ {props.price}</h2>
+            
+                <img src={props.image} alt="imageProduct"/>
 
-                    <ItemDescription>
-                        <p>{props.description}</p>
-                    </ItemDescription>
-                </ItemInformation>
-            </div>
-        </Detail>        
+                <ItemDescription>
+                    <p>{props.description}</p>
+                </ItemDescription>
+            </ItemInformation>
+        </Detail>
     )
 }
 
@@ -26,17 +24,16 @@ const Detail = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
     column-gap: 5rem;
     border-radius: 10px;
     padding: 1rem;
     box-shadow: 5px 5px 15px #cfcfcf;
-    margin: 3rem;
     background-color: white;
+    margin: auto;
     
     img{
-        max-width: 550px;
-        border-radius: 5px;
+        width: 22em;
+        height: 100%;
     }
 `
 const ItemDescription = styled.div`
