@@ -13,7 +13,7 @@ export default function Navbar() {
 
     return (
         <NavBar>
-            <Link to='/'><li><Button>Inicio</Button></li></Link>
+            <Link to='/' replace><li><Button>Inicio</Button></li></Link>
             <ToggleMenu />
             <CartWidget/>
             {
