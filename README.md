@@ -34,3 +34,5 @@ Para poder ver en funcionamiento el eCommerce, usarás estos comandos:
     npm start
 
 # Demo eCommerce:
+
+<video src="https://firebasestorage.googleapis.com/v0/b/ecommerce-mauna.appspot.com/o/e-Commerce%20-%20Brave%202021-06-02%2000-56-48.mp4?alt=media&token=af6c07ed-8be7-4180-a6ea-71ce56f7a84b"></video>
