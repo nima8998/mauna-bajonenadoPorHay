@@ -32,8 +32,9 @@ const Detail = styled.div`
     margin: auto;
     
     img{
-        width: 22em;
-        height: 100%;
+        max-width: 75%;
+        width: 100%;
+        object-fit: cover;
     }
 `
 const ItemDescription = styled.div`

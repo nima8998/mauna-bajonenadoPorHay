@@ -31,7 +31,6 @@ Para poder ver en funcionamiento el eCommerce, usarás estos comandos:
     cd mauna-ecommerceReact
     npm install node-modules
     npm install -S react-google-login
-    npm install -S react-styled-flexboxgrid
     npm start
 
 # Demo eCommerce:

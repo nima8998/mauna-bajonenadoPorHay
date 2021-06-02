@@ -4,15 +4,10 @@ import styled from 'styled-components'
 
 const Item = (articulo) => {
 
-    let styleCard = {
-        width: '350px',
-        padding: '10px'
-    }
-
     return (
-        <Card style={styleCard}>
+        <Card>
 
-            <ItemCard className='Item'>
+            <ItemCard>
                 <ItemTitle>
                     {articulo.title}
                 </ItemTitle>
@@ -34,16 +29,17 @@ const ItemCard = styled.div`
     align-items: center;
     flex-direction: column;
     text-align: center;
-`
+    `
 
 const ItemTitle = styled.div`
     font-size: 20px;
     margin: 15px 0;
     font-weight: 600;
-`
+    `
 
 const ItemImage = styled.div`
     img{
+        padding: .5em;
         width: 350px;
         max-width: 350px;
         border-radius: 5px;

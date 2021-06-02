@@ -21,8 +21,8 @@ const Container = styled.article`
     height: calc(100vh - 400px);
     display: flex;
     margin: auto;
-    column-gap: 15px;
-    max-width: 1600px;
+    column-gap: 1em;
+    max-width: 1200px;
 `
 
 const CartList = styled.section`

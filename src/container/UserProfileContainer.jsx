@@ -43,7 +43,7 @@ export default function UserProfile() {
                     favItem <= 0 ? 
                     <h1>
                         ¿No tenes ningún producto favorito? Revisá nuestra
-                        <Link to='/' replace> tienda</Link> 💕
+                        <Link to='/'> tienda</Link> 💕
                     </h1>
                     :
                     favItem.map((favs, i) => <ItemFavDetail key={i} props={favs}/>)

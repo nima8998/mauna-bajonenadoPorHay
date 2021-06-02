@@ -79,7 +79,8 @@ const Container = styled.article`
     height: 100%;
     display: flex;
     margin: auto;
-    width: 75vw;
+    width: 65%;
+
     @media ${device.mobile}{
         width: 100vw;
         flex-direction: column;
@@ -89,6 +90,7 @@ const Container = styled.article`
             width: 5em;
         }
     }
+
     @media ${device.tablet}{
         width: 100vw;
         flex-direction: column;
@@ -99,6 +101,7 @@ const Container = styled.article`
             width: 15em;
         }
     }
+    
     @media ${device.desktop}{
         img{
             width: 20em;

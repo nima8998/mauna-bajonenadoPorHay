@@ -11,8 +11,7 @@ show,
 stockLocal,
 stockCliente,
 disabledBtn,
-disabledBuy,
-inCart}) {
+disabledBuy}) {
 
 return (
         <Count>

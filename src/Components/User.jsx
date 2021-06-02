@@ -10,7 +10,7 @@ export default function User() {
     
     return (
         <Thumbnail>
-            <Link to='/profile' replace>
+            <Link to='/profile' >
                 <Button
                     color='primary'
                     variant='contained'
