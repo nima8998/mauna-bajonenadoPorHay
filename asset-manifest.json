@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/react-app/static/css/main.51ad1b10.chunk.css",
-    "main.js": "/react-app/static/js/main.697cef17.chunk.js",
-    "main.js.map": "/react-app/static/js/main.697cef17.chunk.js.map",
-    "runtime-main.js": "/react-app/static/js/runtime-main.5ebe524d.js",
-    "runtime-main.js.map": "/react-app/static/js/runtime-main.5ebe524d.js.map",
-    "static/js/2.3bce6627.chunk.js": "/react-app/static/js/2.3bce6627.chunk.js",
-    "static/js/2.3bce6627.chunk.js.map": "/react-app/static/js/2.3bce6627.chunk.js.map",
-    "static/js/3.0125eb13.chunk.js": "/react-app/static/js/3.0125eb13.chunk.js",
-    "static/js/3.0125eb13.chunk.js.map": "/react-app/static/js/3.0125eb13.chunk.js.map",
-    "index.html": "/react-app/index.html",
-    "static/css/main.51ad1b10.chunk.css.map": "/react-app/static/css/main.51ad1b10.chunk.css.map",
-    "static/js/2.3bce6627.chunk.js.LICENSE.txt": "/react-app/static/js/2.3bce6627.chunk.js.LICENSE.txt",
-    "static/media/Bg.css": "/react-app/static/media/Bg.389922d5.png"
+    "main.css": "/mauna-eCommerceReact/static/css/main.c03f3f8d.chunk.css",
+    "main.js": "/mauna-eCommerceReact/static/js/main.697cef17.chunk.js",
+    "main.js.map": "/mauna-eCommerceReact/static/js/main.697cef17.chunk.js.map",
+    "runtime-main.js": "/mauna-eCommerceReact/static/js/runtime-main.4f184d9c.js",
+    "runtime-main.js.map": "/mauna-eCommerceReact/static/js/runtime-main.4f184d9c.js.map",
+    "static/js/2.5f95e14e.chunk.js": "/mauna-eCommerceReact/static/js/2.5f95e14e.chunk.js",
+    "static/js/2.5f95e14e.chunk.js.map": "/mauna-eCommerceReact/static/js/2.5f95e14e.chunk.js.map",
+    "static/js/3.0125eb13.chunk.js": "/mauna-eCommerceReact/static/js/3.0125eb13.chunk.js",
+    "static/js/3.0125eb13.chunk.js.map": "/mauna-eCommerceReact/static/js/3.0125eb13.chunk.js.map",
+    "index.html": "/mauna-eCommerceReact/index.html",
+    "static/css/main.c03f3f8d.chunk.css.map": "/mauna-eCommerceReact/static/css/main.c03f3f8d.chunk.css.map",
+    "static/js/2.5f95e14e.chunk.js.LICENSE.txt": "/mauna-eCommerceReact/static/js/2.5f95e14e.chunk.js.LICENSE.txt",
+    "static/media/Bg.css": "/mauna-eCommerceReact/static/media/Bg.389922d5.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.5ebe524d.js",
-    "static/js/2.3bce6627.chunk.js",
-    "static/css/main.51ad1b10.chunk.css",
+    "static/js/runtime-main.4f184d9c.js",
+    "static/js/2.5f95e14e.chunk.js",
+    "static/css/main.c03f3f8d.chunk.css",
     "static/js/main.697cef17.chunk.js"
   ]
 }
