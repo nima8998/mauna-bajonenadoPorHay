@@ -6,10 +6,10 @@ export default function Footer() {
     return (
         <Container>
             <ul>
-                <li><Link to='/'>Inicio</Link></li>
-                <li><Link to='/category/buzos'>Buzos</Link></li>
-                <li><Link to='/category/camperas'>Camperas</Link></li>
-                <li><Link to='/category/camisas'>Camisas</Link></li>
+                <li><Link to='/' replace>Inicio</Link></li>
+                <li><Link to='/category/buzos' replace>Buzos</Link></li>
+                <li><Link to='/category/camperas' replace>Camperas</Link></li>
+                <li><Link to='/category/camisas' replace>Camisas</Link></li>
             </ul>
             <ul>
                 <li>Facebook</li>
@@ -51,8 +51,9 @@ const Container = styled.div`
 
     a{
         text-decoration: none;
+        color: #000;
         &:visited{
-            color: black;
+            color: #000;
         }
     }
 `

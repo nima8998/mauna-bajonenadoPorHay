@@ -12,7 +12,7 @@ export default function CartWidget() {
 
     return (
         <CartIcon>
-            <Link to='/checkout'>
+            <Link to='/checkout' replace>
                 <Cart color="primary"/>
                 <CartCount style={{display: `${itemCart >= 0  ? 'none' : 'inline'}`}}>
                     {

@@ -10,7 +10,7 @@ export default function User() {
     
     return (
         <Thumbnail>
-            <Link to='/profile' >
+            <Link to='/profile' replace>
                 <Button
                     color='primary'
                     variant='contained'
@@ -25,7 +25,7 @@ export default function User() {
                 size='small'
                 onClick={logOut}
             >
-                <Link to='/'>
+                <Link to='/' replace>
                     Logout
                 </Link>
             </Button>
