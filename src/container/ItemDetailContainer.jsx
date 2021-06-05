@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import {useCartContext} from '../Context/CartContext'
 import { getFirestore } from '../firebase'
+import { device } from '../css/MediaQueries'
 
 export default function ItemDetailContainer() {
 
@@ -53,4 +54,12 @@ export default function ItemDetailContainer() {
         justify-content: center;
         align-self: center;
         margin: auto;
+
+        @media ${device.mobile}{
+            width: 100%;
+        }
+
+        @media ${device.tablet}{
+            width: 85%;
+        }
     `

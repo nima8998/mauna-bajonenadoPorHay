@@ -51,7 +51,6 @@ const Container = styled.section`
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 95vw;
         margin: 1em auto;
     }
 `
