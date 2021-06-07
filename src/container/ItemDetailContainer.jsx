@@ -49,7 +49,7 @@ export default function ItemDetailContainer() {
 
     const ItemDetalContainer = styled.div`
         height: 100%;
-        width: 50%;
+        width: 75%;
         display: flex;
         justify-content: center;
         align-self: center;

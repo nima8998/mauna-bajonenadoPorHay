@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import {device} from '../css/MediaQueries'
 import CartWidget from './CartWidget.jsx' 
-import ToggleMenu from './ToggleMenu.jsx'
 import Button from '@material-ui/core/Button'
 import Login from './Login'
 import User from './User.jsx'
+import ListCategorias from './ListCategorias'
 import { Link } from 'react-router-dom'
 import {useUserContext} from '../Context/UserContext'
 
@@ -13,14 +13,17 @@ export default function Navbar() {
     const {userLogged} = useUserContext()
 
     return (
-        <NavBar>
-            <Link to='/' replace><li><Button>Inicio</Button></li></Link>
-            <ToggleMenu />
-            <CartWidget/>
-            {
-                userLogged === undefined ? <Login/> : <User/>
-            }
-        </NavBar>
+        <div>
+            <NavBar>
+                <Link to='/' replace><li><Button>Inicio</Button></li></Link>
+                <Link to='/'><li><Button>Productos</Button></li></Link>
+                <CartWidget/>
+                {
+                    userLogged === undefined ? <Login/> : <User/>
+                }
+            </NavBar>
+            <ListCategorias/>
+        </div>
     )
 }
 
@@ -29,8 +32,8 @@ const NavBar = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    max-width: 45vw;
-    margin: 2em auto 4em;
+    max-width: 45%;
+    margin: 1em auto;
 
     a, &:visited{
         color: #000;
