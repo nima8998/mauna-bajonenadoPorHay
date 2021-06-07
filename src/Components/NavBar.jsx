@@ -16,7 +16,7 @@ export default function Navbar() {
         <div>
             <NavBar>
                 <Link to='/' replace><li><Button>Inicio</Button></li></Link>
-                <Link to='/'><li><Button>Productos</Button></li></Link>
+                <Link to='/products'><li><Button>Productos</Button></li></Link>
                 <CartWidget/>
                 {
                     userLogged === undefined ? <Login/> : <User/>

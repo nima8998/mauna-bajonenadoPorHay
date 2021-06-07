@@ -1,4 +1,5 @@
 import NavBar from "./Components/NavBar";
+import Home from "./container/HomeContainer";
 import ItemDetailContainer from "./container/ItemDetailContainer";
 import ItemListContainer from "./container/ItemListContainer";
 import Footer from "./Components/Footer";
@@ -31,8 +32,12 @@ function App() {
 								<ItemListContainer />
 							</Route>
 
-							<Route path="/">
+							<Route path="/products">
 								<ItemListContainer />
+							</Route>
+
+							<Route path="/">
+								<Home />
 							</Route>
 						</Switch>
 						<Footer />
