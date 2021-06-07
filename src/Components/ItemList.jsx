@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const ItemList = ({props}) => {
     return (
-        <ItemContainer>
+        <ItemContainer className='ItemCard'>
             {
                 <Link key={props.id} 
                 to={`/item/${props.id}`}>
