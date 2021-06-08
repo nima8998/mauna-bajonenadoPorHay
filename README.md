@@ -37,4 +37,4 @@ Para poder ver en funcionamiento el eCommerce, usarás estos comandos:
 
 ## [Play demo](https://nima8998.github.io/mauna-eCommerceReact/#/)
 
-<img src="https://firebasestorage.googleapis.com/v0/b/ecommerce-mauna.appspot.com/o/gifecommerce.gif?alt=media&token=e9695a75-a57c-44a3-b558-82c5fa72ad09">
+<img src="https://firebasestorage.googleapis.com/v0/b/ecommerce-mauna.appspot.com/o/Reacto%20Shop%20gif.gif?alt=media&token=6d17319d-9ca1-4b2e-9b90-9c33d90db3ad">
