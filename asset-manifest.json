@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/mauna-eCommerceReact/static/css/main.c03f3f8d.chunk.css",
-    "main.js": "/mauna-eCommerceReact/static/js/main.dd070dc9.chunk.js",
-    "main.js.map": "/mauna-eCommerceReact/static/js/main.dd070dc9.chunk.js.map",
-    "runtime-main.js": "/mauna-eCommerceReact/static/js/runtime-main.4f184d9c.js",
-    "runtime-main.js.map": "/mauna-eCommerceReact/static/js/runtime-main.4f184d9c.js.map",
-    "static/js/2.cf65040e.chunk.js": "/mauna-eCommerceReact/static/js/2.cf65040e.chunk.js",
-    "static/js/2.cf65040e.chunk.js.map": "/mauna-eCommerceReact/static/js/2.cf65040e.chunk.js.map",
-    "static/js/3.0125eb13.chunk.js": "/mauna-eCommerceReact/static/js/3.0125eb13.chunk.js",
-    "static/js/3.0125eb13.chunk.js.map": "/mauna-eCommerceReact/static/js/3.0125eb13.chunk.js.map",
+    "main.js": "/mauna-eCommerceReact/static/js/main.38899c10.chunk.js",
+    "main.js.map": "/mauna-eCommerceReact/static/js/main.38899c10.chunk.js.map",
+    "runtime-main.js": "/mauna-eCommerceReact/static/js/runtime-main.54f2a7dc.js",
+    "runtime-main.js.map": "/mauna-eCommerceReact/static/js/runtime-main.54f2a7dc.js.map",
+    "static/js/2.521d833c.chunk.js": "/mauna-eCommerceReact/static/js/2.521d833c.chunk.js",
+    "static/js/2.521d833c.chunk.js.map": "/mauna-eCommerceReact/static/js/2.521d833c.chunk.js.map",
+    "static/js/3.85713ad4.chunk.js": "/mauna-eCommerceReact/static/js/3.85713ad4.chunk.js",
+    "static/js/3.85713ad4.chunk.js.map": "/mauna-eCommerceReact/static/js/3.85713ad4.chunk.js.map",
     "index.html": "/mauna-eCommerceReact/index.html",
     "static/css/main.c03f3f8d.chunk.css.map": "/mauna-eCommerceReact/static/css/main.c03f3f8d.chunk.css.map",
-    "static/js/2.cf65040e.chunk.js.LICENSE.txt": "/mauna-eCommerceReact/static/js/2.cf65040e.chunk.js.LICENSE.txt",
+    "static/js/2.521d833c.chunk.js.LICENSE.txt": "/mauna-eCommerceReact/static/js/2.521d833c.chunk.js.LICENSE.txt",
     "static/media/Bg.css": "/mauna-eCommerceReact/static/media/Bg.389922d5.png",
     "static/media/product_hunt.ec381797.png": "/mauna-eCommerceReact/static/media/product_hunt.ec381797.png",
     "static/media/reactoBrand.31a9c321.png": "/mauna-eCommerceReact/static/media/reactoBrand.31a9c321.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.4f184d9c.js",
-    "static/js/2.cf65040e.chunk.js",
+    "static/js/runtime-main.54f2a7dc.js",
+    "static/js/2.521d833c.chunk.js",
     "static/css/main.c03f3f8d.chunk.css",
-    "static/js/main.dd070dc9.chunk.js"
+    "static/js/main.38899c10.chunk.js"
   ]
 }
