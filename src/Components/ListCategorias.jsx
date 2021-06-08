@@ -18,7 +18,7 @@ export default function ListCategorias() {
 const Container = styled.div`
     width: 100%;
     height: 50px;
-    margin: 1em auto;
+    margin: auto;
     
     ul{
         display: flex;

@@ -40,7 +40,7 @@ const Thumbnail = styled.div`
     padding-left: 3em;
 
     img{
-        width: 50px;
+        width: 45px;
         border-radius: 50%;
 
     }
@@ -52,8 +52,15 @@ const Thumbnail = styled.div`
 
     a{
         color: #fff;
+        
         &:visited{
             color: #fff;
+        }
+    }
+
+    @media ${device.tablet}{
+        img{
+            width: 45px;
         }
     }
 
@@ -62,6 +69,10 @@ const Thumbnail = styled.div`
         row-gap: 1em;
         margin-top: .5em;
         padding: 0;
+
+        img{
+            width: 35px;
+        }
     }
 
 `

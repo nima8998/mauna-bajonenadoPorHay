@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
+import {device} from '../css/MediaQueries'
 import styled from 'styled-components'
-import logo from '../img/product_hunt.png'
+import flatNewIn from '../img/product_hunt.png'
+import CircularProgrss from '@material-ui/core/CircularProgress'
 import ItemList from '../Components/ItemList'
 import {getFirestore} from './../firebase'
 
@@ -29,10 +31,10 @@ export default function HomeContainer() {
         <Container>
             <ContainerTitle>
                 <h1>New in!</h1>
-                <img src={logo} alt="product_hunt_storyset" />
+                <img src={flatNewIn} alt="product_hunt_storyset" className='flatNewIn'/>
             </ContainerTitle>
             {
-                primerosTres.map((i, key)=><ItemList key={key}props={i}/>)
+                primerosTres >= 0 ? <CircularProgrss color='secondary' /> : primerosTres.map((i, key)=><ItemList key={key}props={i}/>)
             }
         </Container>
     )
@@ -47,6 +49,7 @@ const Container = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    padding-top: 5em;
     margin: auto;
 
     .ItemCard{
@@ -55,7 +58,7 @@ const Container = styled.div`
         }
     }
     
-    img{
+    .flatNewIn{
         width: 22em;
     }
 `
@@ -67,6 +70,18 @@ const ContainerTitle = styled.div`
     
     h1{
         font-size: 22px;
-        margin: 0;
+        margin: auto;
+    }
+
+    @media ${device.mobile}{
+        .flatNewIn{
+            margin-bottom: -10em;
+        }
+    }
+
+    @media ${device.tablet}{
+        .flatNewIn{
+            margin-bottom: -10em;
+        }
     }
 `
