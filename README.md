@@ -16,13 +16,6 @@ Como se aclara en el titulo, el mismo es un proyecto final para un curso de Code
 - React-router-dom
 - React-google-login
 
-## Hooks:
-
-- Context
-- useEffect
-- useState
-- useParams
-
 # Deploy
 
 Para poder ver en funcionamiento el eCommerce, usarás estos comandos:
