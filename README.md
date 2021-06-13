@@ -22,7 +22,6 @@ Para poder ver en funcionamiento el eCommerce, usarás estos comandos:
 
     git clone https://github.com/nima8998/mauna-eCommerceReact.git
     cd mauna-ecommerceReact
-    npm install node-modules
     npm install react-google-login
     npm start
 
